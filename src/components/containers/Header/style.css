@@ -1,0 +1,70 @@
+header#header{
+    width:100%;
+    font-weight: bold;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img.logo{
+    position: relative;
+    margin-right: 50px;
+}
+div.div-search{
+    position: relative;
+    height: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+div.div-search input[type="text"]{
+    position: relative;
+    height: 100%;
+    width: 350px;
+    border-radius: 5px;
+    border:none;
+    background-color: white;
+    padding:5px;
+}
+div.div-search button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    border:none;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+    float: right;
+    padding:2px;
+}
+div.div-list{
+    position: relative;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+div.div-list ul.list-options{
+    list-style: none;
+    border-radius: 5px;
+}
+div.div-list ul.list-options li{
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+div.div-list ul.list-options li:hover{
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #ddd;
+    text-decoration: underline;
+    border-radius: 5px;
+}
+
