@@ -13,8 +13,8 @@ const Header = () => (
     </div>
     <div className="div-list">
         <ul className="list-options">
-            <li><b>Entrar</b></li>
-            <li><b>Cadastrar</b></li>
+            <li><img src={ lupa } alt="Icone"/><b>Entrar</b></li>
+            <li><img src={ lupa } alt="Icone"/><b>Cadastrar</b></li>
         </ul>
     </div>
 </header>

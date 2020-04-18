@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './style.css';
-import img from './img.jpg';
+import react from './react.png';
+import vue from './vue.png';
+import angular from './angular.png';
+import electron from './electron.jpg';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -9,6 +12,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Banner from '../../components/shared/Banner';
+import Slide from '../../components/shared/Slide';
 
 
 export default class Home extends Component{
@@ -16,13 +21,15 @@ export default class Home extends Component{
         return(
             <main className="content">
                 <Container maxWidth="false">
+                    <Slide />
+                    <Banner />
                     <ul className="list-card">
                         <li>
                             <Card className="card-wd">
                                 <CardActionArea>
                                     <CardMedia
                                     className="card-media"
-                                    image={img}
+                                    image={react}
                                     title="Contemplative Reptile"
                                     />
                                     <CardContent>
@@ -49,12 +56,12 @@ export default class Home extends Component{
                                 <CardActionArea>
                                     <CardMedia
                                     className="card-media"
-                                    image={img}
+                                    image={vue}
                                     title="Contemplative Reptile"
                                     />
                                     <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        React JS
+                                        Vue JS
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                     React é uma biblioteca JavaScript para construção de interfaces de usuário
@@ -76,12 +83,12 @@ export default class Home extends Component{
                                 <CardActionArea>
                                     <CardMedia
                                     className="card-media"
-                                    image={img}
+                                    image={electron}
                                     title="Contemplative Reptile"
                                     />
                                     <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        React JS
+                                        Electron JS
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                     React é uma biblioteca JavaScript para construção de interfaces de usuário
@@ -103,12 +110,12 @@ export default class Home extends Component{
                                 <CardActionArea>
                                     <CardMedia
                                     className="card-media"
-                                    image={img}
+                                    image={angular}
                                     title="Contemplative Reptile"
                                     />
                                     <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        React JS
+                                        Angular JS
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                     React é uma biblioteca JavaScript para construção de interfaces de usuário
