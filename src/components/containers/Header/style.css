@@ -1,10 +1,10 @@
 header#header{
     width:100%;
     font-weight: bold;
-    background: #fafafa;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 2px 2px 5px rgb(146, 146, 146);
 }
 img.logo{
     position: relative;
@@ -19,7 +19,7 @@ div.div-search{
     border-radius: 5px;
     border: 1px solid black;
 }
-div.div-search input[type="text"]{
+div.div-search input[type="search"]{
     position: relative;
     height: 100%;
     width: 350px;
@@ -57,6 +57,7 @@ div.div-list ul.list-options li{
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
+    transition: all 1s;
 }
 div.div-list ul.list-options li:hover{
     position: relative;
@@ -64,7 +65,6 @@ div.div-list ul.list-options li:hover{
     padding: 10px;
     cursor: pointer;
     background-color: #ddd;
-    text-decoration: underline;
     border-radius: 5px;
 }
 

@@ -11,3 +11,20 @@ main.content{
     color:#696969;
     display: flex;
 }
+.card-wd{
+    max-width: 250px;
+    transition: all 1s;
+}
+.card-wd:hover{
+    box-shadow: 2px 2px 5px rgb(182, 182, 182);
+}
+.card-media{
+    height:140px;
+}
+ul.list-card{
+    list-style: none;
+}
+ul.list-card li{
+    display: inline-block;
+    padding:5px;
+}
