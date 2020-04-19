@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
-import react from './react.png';
-import vue from './vue.png';
-import angular from './angular.png';
-import electron from './electron.jpg';
+import cel from '../../static/imagens/cel.jpg';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -29,7 +26,7 @@ export default class Home extends Component{
                                 <CardActionArea>
                                     <CardMedia
                                     className="card-media"
-                                    image={react}
+                                    image={cel}
                                     title="Contemplative Reptile"
                                     />
                                     <CardContent>
@@ -56,7 +53,7 @@ export default class Home extends Component{
                                 <CardActionArea>
                                     <CardMedia
                                     className="card-media"
-                                    image={vue}
+                                    image={cel}
                                     title="Contemplative Reptile"
                                     />
                                     <CardContent>
@@ -83,7 +80,7 @@ export default class Home extends Component{
                                 <CardActionArea>
                                     <CardMedia
                                     className="card-media"
-                                    image={electron}
+                                    image={cel}
                                     title="Contemplative Reptile"
                                     />
                                     <CardContent>
@@ -110,7 +107,7 @@ export default class Home extends Component{
                                 <CardActionArea>
                                     <CardMedia
                                     className="card-media"
-                                    image={angular}
+                                    image={cel}
                                     title="Contemplative Reptile"
                                     />
                                     <CardContent>

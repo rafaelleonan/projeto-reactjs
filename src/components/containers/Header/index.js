@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
-import logo from './imagens/logo.png';
-import lupa from './imagens/lupa.png';
+import logo from '../../../static/icons/logo.png';
+import lupa from '../../../static/icons/lupa.png';
 
 
 const Header = () => (
@@ -13,8 +13,8 @@ const Header = () => (
     </div>
     <div className="div-list">
         <ul className="list-options">
-            <li><img src={ lupa } alt="Icone"/><b>Entrar</b></li>
-            <li><img src={ lupa } alt="Icone"/><b>Cadastrar</b></li>
+            <li><span>Entrar</span></li>
+            <li><span>Cadastrar</span></li>
         </ul>
     </div>
 </header>

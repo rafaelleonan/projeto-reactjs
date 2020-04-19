@@ -76,11 +76,10 @@ div.div-list ul.list-options li:hover{
     border-radius: 5px;
 }
 ul.list-options li img{
-    display: inline-block;
     width: 15px;
     height: 15px;
 }
-ul.list-options li img, b{
+ul.list-options li img, span{
     display: inline-block;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css';
-import slide from './slide.jpg'
+import slide from '../../../static/imagens/slide2.jpg'
 
 const Silde = () => {
     return(
