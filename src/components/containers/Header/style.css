@@ -1,10 +1,18 @@
+div.cu{
+    position: relative;
+    width: 100%;
+}
 header#header{
+    position: fixed;
+    top:0px;
+    height: 80px;
+    z-index: 1;
+    background:#104E8B;
     width:100%;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 2px 2px 5px rgb(146, 146, 146);
 }
 img.logo{
     position: relative;
@@ -36,12 +44,15 @@ div.div-search button{
     align-items: center;
     justify-items: center;
     height: 100%;
-    border:none;
+    border-left:1px solid #ddd;
+    border-right:none;
+    border-top:none;
+    border-bottom:none;
     border-radius: 5px;
     background: transparent;
     cursor: pointer;
     float: right;
-    padding:2px;
+    padding:4px;
     opacity: 0.5;
 }
 div.div-search button:hover{
@@ -75,11 +86,28 @@ div.div-list ul.list-options li:hover{
     background-color: #ddd;
     border-radius: 5px;
 }
-ul.list-options li img{
-    width: 15px;
-    height: 15px;
+div.menu{
+    position: relative;
+    width: 100%;
+    margin-top:80px;
+    box-shadow: 2px 2px 5px rgb(146, 146, 146);
 }
-ul.list-options li img, span{
-    display: inline-block;
+ul.menu-list{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
+ul.menu-list li {
+    display:inline-block;
+    padding:10px;
+    cursor: pointer;
+    color:black;
+}
+ul.menu-list li:hover {
+    background: #104E8B;
+    padding:10px;
+    cursor: pointer;
+    color:white;
+}
