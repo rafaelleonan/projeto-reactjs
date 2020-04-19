@@ -1,133 +1,62 @@
 import React, { Component } from 'react';
 import './style.css';
+import '../../style.css';
 import cel from '../../static/imagens/cel.jpg';
 import Container from '@material-ui/core/Container';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import Banner from '../../components/shared/Banner';
 import Slide from '../../components/shared/Slide';
+import slide from '../../static/imagens/slide2.jpg'
+import CardInfo from '../../components/shared/CardInfo';
+import banner from '../../static/imagens/banner.jpg'
 
 
 export default class Home extends Component{
     render(){
         return(
-            <main className="content">
-                <Container maxWidth="false">
-                    <Slide />
-                    <Banner />
+            <main className="default content">
+                <Container maxWidth={ false }>
+                    <Slide title="Slide aqui" text="Corpo do texto" slide={ slide } />
+                    <Banner title="Categoria" foto={ banner } link="/categoria"/>
                     <ul className="list-card">
                         <li>
-                            <Card className="card-wd">
-                                <CardActionArea>
-                                    <CardMedia
-                                    className="card-media"
-                                    image={cel}
-                                    title="Contemplative Reptile"
-                                    />
-                                    <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        React JS
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                    React é uma biblioteca JavaScript para construção de interfaces de usuário
-                                    </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                                <CardActions>
-                                    <Button size="small" color="primary">
-                                    Compartilhar
-                                    </Button>
-                                    <Button size="small" color="primary">
-                                    Ver mais
-                                    </Button>
-                                </CardActions>
-                            </Card>
+                            <CardInfo 
+                                imagem={ cel } 
+                                titleHover="Celular" 
+                                title="Celular" 
+                                text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
+                                linkButton1="/produto/id" nameButton1="Compartilhar"
+                                linkButton2="/produto/id" nameButton2="Ver mais"
+                             />
                         </li>
                         <li>
-                            <Card className="card-wd">
-                                <CardActionArea>
-                                    <CardMedia
-                                    className="card-media"
-                                    image={cel}
-                                    title="Contemplative Reptile"
-                                    />
-                                    <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        Vue JS
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                    React é uma biblioteca JavaScript para construção de interfaces de usuário
-                                    </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                                <CardActions>
-                                    <Button size="small" color="primary">
-                                    Compartilhar
-                                    </Button>
-                                    <Button size="small" color="primary">
-                                    Ver mais
-                                    </Button>
-                                </CardActions>
-                            </Card>
+                        <CardInfo 
+                            imagem={ cel } 
+                            titleHover="Celular" 
+                            title="Celular" 
+                            text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
+                            linkButton1="/produto/id" nameButton1="Compartilhar"
+                            linkButton2="/produto/id" nameButton2="Ver mais"
+                            />
                         </li>
                         <li>
-                            <Card className="card-wd">
-                                <CardActionArea>
-                                    <CardMedia
-                                    className="card-media"
-                                    image={cel}
-                                    title="Contemplative Reptile"
-                                    />
-                                    <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        Electron JS
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                    React é uma biblioteca JavaScript para construção de interfaces de usuário
-                                    </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                                <CardActions>
-                                    <Button size="small" color="primary">
-                                    Compartilhar
-                                    </Button>
-                                    <Button size="small" color="primary">
-                                    Ver mais
-                                    </Button>
-                                </CardActions>
-                            </Card>
+                        <CardInfo 
+                            imagem={ cel } 
+                            titleHover="Celular" 
+                            title="Celular" 
+                            text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
+                            linkButton1="/produto/id" nameButton1="Compartilhar"
+                            linkButton2="/produto/id" nameButton2="Ver mais"
+                            />
                         </li>
                         <li>
-                            <Card className="card-wd">
-                                <CardActionArea>
-                                    <CardMedia
-                                    className="card-media"
-                                    image={cel}
-                                    title="Contemplative Reptile"
-                                    />
-                                    <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        Angular JS
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                    React é uma biblioteca JavaScript para construção de interfaces de usuário
-                                    </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                                <CardActions>
-                                    <Button size="small" color="primary">
-                                    Compartilhar
-                                    </Button>
-                                    <Button size="small" color="primary">
-                                    Ver mais
-                                    </Button>
-                                </CardActions>
-                            </Card>
+                        <CardInfo 
+                            imagem={ cel } 
+                            titleHover="Celular" 
+                            title="Celular" 
+                            text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
+                            linkButton1="/produto/id" nameButton1="Compartilhar"
+                            linkButton2="/produto/id" nameButton2="Ver mais"
+                            />
                         </li>
                     </ul>
                 </Container>

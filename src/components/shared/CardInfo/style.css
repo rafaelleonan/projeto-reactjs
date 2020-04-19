@@ -1,0 +1,13 @@
+.card-wd{
+    max-width: 250px;
+    transition: all 1s;
+}
+.card-wd:hover{
+    box-shadow: 2px 2px 5px rgb(182, 182, 182);
+}
+.card-media{
+    min-height:250px;
+}
+a{
+    text-decoration: none;
+}

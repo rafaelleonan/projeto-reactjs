@@ -1,19 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './style.css';
-import slide from '../../../static/imagens/slide2.jpg'
+//import slide from '../../../static/imagens/slide2.jpg'
 
-const Silde = () => {
-    return(
+export default class Slide extends Component {
+    render(){
+        return(
         <div className="slide">
-            <img src={ slide } alt="Slide"/>
+            <img src={ this.props.slide } alt="Slide"/>
             <div className="conteudo-slide">
-                <h1>Titulo Slide</h1>
+                <h1>{ this.props.title }</h1>
                 <p>
-                    Texto Slide
+                    { this.props.text }
                 </p>
             </div>
         </div>
-    );
+        );
+    };
 }
 
-export default Silde;

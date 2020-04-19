@@ -1,4 +1,8 @@
-footer#footer{
+footer{
+    position: relative;
+    width:100%;
+}
+div#info-footer{
     position: relative;
     width:100%;
     padding:15px;
@@ -11,7 +15,7 @@ footer#footer{
 }
 div.block-div{
     padding: 20px;
-    margin: 20px;
+    margin: 10px;
 }
 ul.list-footer{
     list-style: none;
@@ -29,4 +33,14 @@ ul.list-footer li a:hover{
     padding: 5px;
     color:#ddd;
     text-decoration: underline;
+}
+div.copyright{
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#696969;
 }
