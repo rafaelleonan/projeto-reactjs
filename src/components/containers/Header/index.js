@@ -9,7 +9,7 @@ import opcoes from '../../../static/icons/opcoes.png';
 const Header = () => (
 <div className="content">
     <header id="header">
-        <a href="/">
+        <a href="/" className="a-logo">
             <img src={ logo } className="logo" alt="Logo"/>
         </a>
         <div className="div-search">
@@ -25,14 +25,9 @@ const Header = () => (
     </header>
     <div className="menu">
         <ul className="menu-list">
-            <li>Categorias</li>
-            <li>Categorias</li>
-            <li>Categorias</li>
-            <li>Categorias</li>
-            <li>Categorias</li>
-            <li>Categorias</li>
-            <li>Categorias</li>
-            <li>Categorias</li>
+            <li><a href="/acessorios"><button type="button">Acessórios</button></a></li>
+            <li><a href="/celulares"><button type="button">Celulares</button></a></li>
+            <li><a href="/marcas"><button type="button">Marcas</button></a></li>
         </ul>
     </div>
 </div>

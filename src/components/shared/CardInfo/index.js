@@ -23,6 +23,9 @@ export default class CardInfo extends Component{
                         <Typography gutterBottom variant="h5" component="h2">
                         { this.props.title }
                         </Typography>
+                        <Typography gutterBottom variant="h6" component="h2">
+                        { this.props.subtitle }
+                        </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
                         { this.props.text }
                         </Typography>

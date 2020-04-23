@@ -7,28 +7,18 @@ const Footer = () =>(
             <div className="block-div">
                 <h2>Contatos</h2>
                 <ul className="list-footer">
-                    <li><a href="#">Contatos</a></li>
-                    <li><a href="#">Contatos</a></li>
-                    <li><a href="#">Contatos</a></li>
-                    <li><a href="#">Contatos</a></li>
+                    <li>Telefone - (##) # ####-####</li>
+                    <li>Telefone - (##) # ####-####</li>
+                    <li>Email - emailfantasia@gmail.com</li>
+                    <li>Telefone - (##) # ####-####</li>
                 </ul>
             </div>
             <div className="block-div">
                 <h2>Atendimento ao cliente</h2>
                 <ul className="list-footer">
-                    <li><a href="#"> Atendimento ao client</a></li>
-                    <li><a href="#"> Atendimento ao client</a></li>
-                    <li><a href="#"> Atendimento ao client</a></li>
-                    <li><a href="#"> Atendimento ao client</a></li>
-                </ul>
-            </div>
-            <div className="block-div">
-                <h2>Nossa empresa</h2>
-                <ul className="list-footer">
-                    <li><a href="#">Nossa empresa</a></li>
-                    <li><a href="#">Nossa empresa</a></li>
-                    <li><a href="#">Nossa empresa</a></li>
-                    <li><a href="#">Nossa empresa</a></li>
+                    <li><a href="#"> Ajuda</a></li>
+                    <li><a href="#"> Sobre a empresa</a></li>
+                    <li><a href="#"> Fale conosco</a></li>
                 </ul>
             </div>
         </div>

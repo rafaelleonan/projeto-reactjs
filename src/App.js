@@ -7,7 +7,11 @@ import './style.css';
 
 const App = () => (
   <div className="App">
-      <Header />
+      <Header 
+        link1="/acessorios" item1="Acessórios"
+        link2="/produto/id" item2="Celulares"
+        link3="/marcas" item3="Marcas"
+      />
       <Routes />
       <Footer />
   </div>

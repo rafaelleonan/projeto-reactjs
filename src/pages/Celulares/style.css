@@ -11,21 +11,37 @@ main.content{
 fieldset.config{
     position: relative;
     width: 100%;
-    padding:10px;
-    border:1px solid #ddd;    
+    padding-top:20px;
+    padding-bottom: 20px;
+    border:1px solid #ddd; 
+}
+legend{
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(97, 97, 97);
 }
 select.select{
     display: inline-block;
     position: relative;
+    color: rgb(97, 97, 97);
     padding:10px;
     margin:10px;
     max-width: 150px;
+    border-radius: 5px; 
+    cursor: pointer;  
 }
 select.select:focus{
-    border-color: rgb(108, 255, 243);
+    border-color: rgb(0, 204, 255);
     padding:10px;
     margin:10px;
     max-width: 150px;
+    border-radius: 5px;  
+    cursor: pointer;  
+}
+label{
+    color: rgb(97, 97, 97);
+    font-size:16px;
+    cursor: pointer; 
 }
 
 div.div-select{

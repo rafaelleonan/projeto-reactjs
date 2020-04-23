@@ -1,54 +1,55 @@
 import React, { Component } from 'react';
 import './style.css';
 import '../../style.css';
-import cel from '../../static/imagens/cel.jpg';
+import capinha from '../../static/imagens/capinha.jpg';
 import Container from '@material-ui/core/Container';
 import Banner from '../../components/shared/Banner';
-import banner from '../../static/imagens/banner.jpg';
+import acessorios from '../../static/imagens/acessorios.jpg';
 import CardInfo from '../../components/shared/CardInfo';
+import Button from '../../components/shared/Button';
 
-export default class Categoria extends Component{
+
+export default class Acessorios extends Component{
     render(){
         return(
             <main className="default content">
                 <Container maxWidth={ false }>
-                    <Banner title="Categoria" foto={ banner } link="#"/>
+                    <Banner title="Acessórios" foto={ acessorios } link="#"/>
                     <fieldset className="config">
                         <legend>Ordenar por</legend>
                         <div className="filtro">
                             <div className="div-select">
-                                <label for="subcategoria">Subcategoria:</label> 
-                                <select id="subcategoria" name="select-subcategoria" className="select">
-                                    <option value="Todas" selected>Todas</option>
-                                    <option value="subcategoria1">Subcategoria 1</option>
-                                    <option value="subcategoria2">Subcategoria 2</option>
-                                </select>
-                            </div>
-                            <div className="div-select">
-                                <label for="alfa">A - Z:</label>
+                                <label for="alfa">Ordem alfabética:</label>
                                 <select id="alfa" name="select-alfa" className="select">
-                                    <option value="Todas" selected>Todas</option>
-                                    <option value="a">A</option>
-                                    <option value="b">B</option>
+                                    <option value="Todas" selected>Aleatória</option>
+                                    <option value="a_z"> A - Z</option>
+                                    <option value="z_a"> Z - A</option>
                                 </select>
                             </div>
                             <div className="div-select">
                                 <label for="preco">Preço:</label>
                                 <select id="preco" name="select-preco" className="select">
                                     <option value="Todos" selected>Todos</option>
-                                    <option value="preco1">R$ 10 - R$ 100</option>
-                                    <option value="preco2">R$ 100 - R$ 200</option>
-                                    <option value="preco3">R$ 200 - R$ 300</option>
+                                    <option value="preco1">Até R$ 50</option>
+                                    <option value="preco2">R$ 51 - R$ 100</option>
+                                    <option value="preco3">R$ 101 - R$ 150</option>
+                                    <option value="preco3">R$ 151 - R$ 200</option>
+                                    <option value="preco3">Acima de R$ 200</option>
                                 </select>
                             </div>
                             <div className="div-select">
                                 <label for="marca">Marca:</label>
                                 <select id="marca" name="select-marca" className="select">
                                     <option value="Todas" selected>Todas</option>
-                                    <option value="marca1">Marca 1</option>
-                                    <option value="marca2">Marca 2</option>
-                                    <option value="marca3">Marca 3</option>
+                                    <option value="apple">Apple</option>
+                                    <option value="lg">LG</option>
+                                    <option value="motorola">Motorola</option>
+                                    <option value="samsung">Samsung</option>
+                                    <option value="xiaomi">Xiaomi</option>
                                 </select>
+                            </div>
+                            <div className="div-select">
+                                <Button name="Aplicar" tipo="submit" estilo="padrao" ></Button>
                             </div>
                         </div>
                     </fieldset>
@@ -56,9 +57,10 @@ export default class Categoria extends Component{
                         <ul className="list-card">
                             <li>
                                 <CardInfo 
-                                    imagem={ cel } 
-                                    titleHover="Celular" 
-                                    title="Celular" 
+                                    imagem={ capinha } 
+                                    titleHover="Capinha de celular" 
+                                    title="Capinha de celular" 
+                                    subtitle="R$ 50,00"
                                     text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                     linkButton1="/produto/id" nameButton1="Compartilhar"
                                     linkButton2="/produto/id" nameButton2="Ver mais"
@@ -66,9 +68,10 @@ export default class Categoria extends Component{
                             </li>
                             <li>
                             <CardInfo 
-                                imagem={ cel } 
-                                titleHover="Celular" 
-                                title="Celular" 
+                                imagem={ capinha } 
+                                titleHover="Capinha de celular" 
+                                title="Capinha de celular" 
+                                subtitle="R$ 50,00"
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                 linkButton1="/produto/id" nameButton1="Compartilhar"
                                 linkButton2="/produto/id" nameButton2="Ver mais"
@@ -76,9 +79,10 @@ export default class Categoria extends Component{
                             </li>
                             <li>
                             <CardInfo 
-                                imagem={ cel } 
-                                titleHover="Celular" 
-                                title="Celular" 
+                                imagem={ capinha } 
+                                titleHover="Capinha de celular" 
+                                title="Capinha de celular" 
+                                subtitle="R$ 50,00"
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                 linkButton1="/produto/id" nameButton1="Compartilhar"
                                 linkButton2="/produto/id" nameButton2="Ver mais"
@@ -86,9 +90,10 @@ export default class Categoria extends Component{
                             </li>
                             <li>
                             <CardInfo 
-                                imagem={ cel } 
-                                titleHover="Celular" 
-                                title="Celular" 
+                                imagem={ capinha } 
+                                titleHover="Capinha de celular" 
+                                title="Capinha de celular" 
+                                subtitle="R$ 50,00"
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                 linkButton1="/produto/id" nameButton1="Compartilhar"
                                 linkButton2="/produto/id" nameButton2="Ver mais"

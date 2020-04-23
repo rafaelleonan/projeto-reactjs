@@ -1,0 +1,65 @@
+button.padrao{
+    border:1px solid #204ac8;
+    padding:10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #204ac8;
+    background: #fff;
+}
+button.padrao:hover{
+    border:1px solid #fff;
+    padding:10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    background: #204ac8;
+}
+button.info{
+    border:1px solid #0086bb;
+    padding:10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #0086bb;
+    background: #fff;
+}
+button.info:hover{
+    border:1px solid #fff;
+    padding:10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    background: #0086bb;
+}
+button.dark{
+    border:1px solid #000000;
+    padding:10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #000000;
+    background: #fff;
+}
+button.dark:hover{
+    border:1px solid #fff;
+    padding:10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    background: #000000;
+}
+button.danger{
+    border:1px solid #ff0000;
+    padding:10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #ff0000;
+    background: #fff;
+}
+button.danger:hover{
+    border:1px solid #fff;
+    padding:10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    background: #ff0000;
+}
+
