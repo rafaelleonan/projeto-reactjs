@@ -1,5 +1,8 @@
 import React from 'react';
 import './style.css';
+import insta from '../../../static/icons/instagram.png';
+import face from '../../../static/icons/facebook.png';
+import twitter from '../../../static/icons/twitter.png';
 
 const Footer = () =>(
     <footer>
@@ -10,20 +13,27 @@ const Footer = () =>(
                     <li>Telefone - (##) # ####-####</li>
                     <li>Telefone - (##) # ####-####</li>
                     <li>Email - emailfantasia@gmail.com</li>
-                    <li>Telefone - (##) # ####-####</li>
                 </ul>
             </div>
             <div className="block-div">
-                <h2>Atendimento ao cliente</h2>
+                <h2>Atendimento</h2>
                 <ul className="list-footer">
                     <li><a href="#"> Ajuda</a></li>
-                    <li><a href="#"> Sobre a empresa</a></li>
+                    <li><a href="#"> Trabalhe conosco</a></li>
                     <li><a href="#"> Fale conosco</a></li>
+                </ul>
+            </div>
+            <div className="block-div">
+                <h2>Redes sociais</h2>
+                <ul className="list-rs">
+                    <li><a href="#"> <img src={ insta } alt="Instagram"/></a></li>
+                    <li><a href="#"> <img src={ face } alt="Facebook"/></a></li>
+                    <li><a href="#"> <img src={ twitter } alt="Twitter"/></a></li>
                 </ul>
             </div>
         </div>
         <div className="copyright">
-            Copyright © 2020
+            Copyright © 2020 - Nome da empresa. Todos os direitos reservados
         </div>
     </footer>
 );

@@ -7,7 +7,6 @@ div#info-footer{
     position: relative;
     width:100%;
     padding:15px;
-    color:#696969;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,13 +16,20 @@ div#info-footer{
 div.block-div{
     padding: 20px;
     margin: 10px;
-    min-height: 200px;
+    min-width: 300px;
+    color:#696969;
+}
+div.block-div h2{
+    text-align: center;
+    text-decoration: underline;
+    font-weight: none;
 }
 ul.list-footer{
     list-style: none;
 }
 ul.list-footer li{
     padding: 5px;
+    width: 100%;
 }
 ul.list-footer li a{
     padding: 5px;
@@ -32,9 +38,33 @@ ul.list-footer li a{
 }
 ul.list-footer li a:hover{
     padding: 5px;
-    color:#ddd;
+    color:#204ac8;
     text-decoration: underline;
 }
+ul.list-rs{
+    list-style: none;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul.list-rs li{
+    display: inline-block;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+}
+ul.list-rs li a{
+    display: contents;
+    height: 100%;
+    width: 100%;
+}
+ul.list-rs li a img{
+    height: 100%;
+    width: 100%;
+}
+
 div.copyright{
     position: relative;
     width: 100%;
