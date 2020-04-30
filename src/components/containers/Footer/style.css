@@ -17,12 +17,16 @@ div.block-div{
     padding: 20px;
     margin: 10px;
     min-width: 300px;
-    color:#696969;
+    color:#204ac8;
 }
 div.block-div h2{
     text-align: center;
-    text-decoration: underline;
+    font-size: 20px;
     font-weight: none;
+    margin-bottom:10px;
+}
+div.block-div h2:before, div.block-div h2:after{
+    content:' ★ '
 }
 ul.list-footer{
     list-style: none;
@@ -33,12 +37,12 @@ ul.list-footer li{
 }
 ul.list-footer li a{
     padding: 5px;
-    color:#696969;
+    color:#204ac8;
     text-decoration: none;
 }
 ul.list-footer li a:hover{
     padding: 5px;
-    color:#204ac8;
+    color:#696969;
     text-decoration: underline;
 }
 ul.list-rs{
@@ -54,6 +58,10 @@ ul.list-rs li{
     margin: 10px;
     width: 40px;
     height: 40px;
+    transition: all 0.5s;
+}
+ul.list-rs li:hover{
+    box-shadow: 0px 2px 0px 0px rgb(155, 155, 155);
 }
 ul.list-rs li a{
     display: contents;
@@ -73,5 +81,5 @@ div.copyright{
     display: flex;
     align-items: center;
     justify-content: center;
-    color:#696969;
+    color:#204ac8;
 }

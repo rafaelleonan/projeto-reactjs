@@ -60,7 +60,7 @@ export default class Acessorios extends Component{
                                     imagem={ capinha } 
                                     titleHover="Capinha de celular" 
                                     title="Capinha de celular" 
-                                    subtitle="R$ 50,00"
+                                    subtitle="50,00"
                                     text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                     linkButton1="/produto/id" nameButton1="Compartilhar"
                                     linkButton2="/produto/id" nameButton2="Ver mais"
@@ -71,7 +71,7 @@ export default class Acessorios extends Component{
                                 imagem={ capinha } 
                                 titleHover="Capinha de celular" 
                                 title="Capinha de celular" 
-                                subtitle="R$ 50,00"
+                                subtitle="50,00"
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                 linkButton1="/produto/id" nameButton1="Compartilhar"
                                 linkButton2="/produto/id" nameButton2="Ver mais"
@@ -82,7 +82,7 @@ export default class Acessorios extends Component{
                                 imagem={ capinha } 
                                 titleHover="Capinha de celular" 
                                 title="Capinha de celular" 
-                                subtitle="R$ 50,00"
+                                subtitle="50,00"
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                 linkButton1="/produto/id" nameButton1="Compartilhar"
                                 linkButton2="/produto/id" nameButton2="Ver mais"
@@ -93,7 +93,7 @@ export default class Acessorios extends Component{
                                 imagem={ capinha } 
                                 titleHover="Capinha de celular" 
                                 title="Capinha de celular" 
-                                subtitle="R$ 50,00"
+                                subtitle="50,00"
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                 linkButton1="/produto/id" nameButton1="Compartilhar"
                                 linkButton2="/produto/id" nameButton2="Ver mais"

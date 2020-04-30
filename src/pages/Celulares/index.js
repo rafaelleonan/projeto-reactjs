@@ -61,7 +61,7 @@ export default class Categoria extends Component{
                                     imagem={ cel } 
                                     titleHover="Celular" 
                                     title="Celular" 
-                                    subtitle="R$ 100,00"
+                                    subtitle="100,00"
                                     text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                     linkButton1="/produto/id" nameButton1="Compartilhar"
                                     linkButton2="/produto/id" nameButton2="Ver mais"
@@ -72,7 +72,7 @@ export default class Categoria extends Component{
                                 imagem={ cel } 
                                 titleHover="Celular" 
                                 title="Celular" 
-                                subtitle="R$ 100,00"
+                                subtitle="100,00"
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                 linkButton1="/produto/id" nameButton1="Compartilhar"
                                 linkButton2="/produto/id" nameButton2="Ver mais"
@@ -83,7 +83,7 @@ export default class Categoria extends Component{
                                 imagem={ cel } 
                                 titleHover="Celular" 
                                 title="Celular" 
-                                subtitle="R$ 100,00"
+                                subtitle="100,00"
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                 linkButton1="/produto/id" nameButton1="Compartilhar"
                                 linkButton2="/produto/id" nameButton2="Ver mais"
@@ -94,7 +94,7 @@ export default class Categoria extends Component{
                                 imagem={ cel } 
                                 titleHover="Celular" 
                                 title="Celular" 
-                                subtitle="R$ 100,00"
+                                subtitle="100,00"
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                 linkButton1="/produto/id" nameButton1="Compartilhar"
                                 linkButton2="/produto/id" nameButton2="Ver mais"

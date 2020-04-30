@@ -9,6 +9,8 @@ import capinha from '../../static/imagens/capinha.jpg';
 import slide from '../../static/imagens/slide2.jpg'
 import CardInfo from '../../components/shared/CardInfo';
 import banner from '../../static/imagens/banner.jpg'
+import carrinho from '../../static/icons/carrinho2.png';
+import ver_mais from '../../static/icons/ver_mais.png';
 import acessorios from '../../static/imagens/acessorios.jpg';
 
 
@@ -25,10 +27,10 @@ export default class Home extends Component{
                                 imagem={ cel } 
                                 titleHover="Celular" 
                                 title="Celular" 
-                                subtitle="R$ 100,00"
+                                subtitle="100,00"
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                                linkButton1="/produto/id" nameButton1="Compartilhar"
-                                linkButton2="/produto/id" nameButton2="Ver mais"
+                                linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
+                                linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
                              />
                         </li>
                         <li>
@@ -36,10 +38,10 @@ export default class Home extends Component{
                             imagem={ cel } 
                             titleHover="Celular" 
                             title="Celular" 
-                            subtitle="R$ 100,00"
+                            subtitle="100,00"
                             text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                            linkButton1="/produto/id" nameButton1="Compartilhar"
-                            linkButton2="/produto/id" nameButton2="Ver mais"
+                            linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
+                            linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
                             />
                         </li>
                         <li>
@@ -47,10 +49,10 @@ export default class Home extends Component{
                             imagem={ cel } 
                             titleHover="Celular" 
                             title="Celular" 
-                            subtitle="R$ 100,00"
+                            subtitle="100,00"
                             text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                            linkButton1="/produto/id" nameButton1="Compartilhar"
-                            linkButton2="/produto/id" nameButton2="Ver mais"
+                            linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
+                            linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
                             />
                         </li>
                         <li>
@@ -58,10 +60,10 @@ export default class Home extends Component{
                             imagem={ cel } 
                             titleHover="Celular" 
                             title="Celular" 
-                            subtitle="R$ 100,00"
+                            subtitle="100,00"
                             text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                            linkButton1="/produto/id" nameButton1="Compartilhar"
-                            linkButton2="/produto/id" nameButton2="Ver mais"
+                            linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
+                            linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
                             />
                         </li>
                     </ul>
@@ -73,10 +75,10 @@ export default class Home extends Component{
                                 imagem={ capinha } 
                                 titleHover="Capinha de celular" 
                                 title="Capinha de celular" 
-                                subtitle="R$ 50,00"
+                                subtitle="50,00"
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                                linkButton1="/produto/id" nameButton1="Compartilhar"
-                                linkButton2="/produto/id" nameButton2="Ver mais"
+                                linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
+                                linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
                             />
                         </li>
                         <li>
@@ -84,10 +86,10 @@ export default class Home extends Component{
                             imagem={ capinha } 
                             titleHover="Capinha de celular" 
                             title="Capinha de celular" 
-                            subtitle="R$ 50,00"
+                            subtitle="50,00"
                             text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                            linkButton1="/produto/id" nameButton1="Compartilhar"
-                            linkButton2="/produto/id" nameButton2="Ver mais"
+                            linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
+                            linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
                             />
                         </li>
                         <li>
@@ -95,10 +97,10 @@ export default class Home extends Component{
                             imagem={ capinha } 
                             titleHover="Capinha de celular" 
                             title="Capinha de celular" 
-                            subtitle="R$ 50,00"
+                            subtitle="50,00"
                             text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                            linkButton1="/produto/id" nameButton1="Compartilhar"
-                            linkButton2="/produto/id" nameButton2="Ver mais"
+                            linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
+                            linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
                             />
                         </li>
                         <li>
@@ -106,10 +108,10 @@ export default class Home extends Component{
                             imagem={ capinha } 
                             titleHover="Capinha de celular" 
                             title="Capinha de celular" 
-                            subtitle="R$ 50,00"
+                            subtitle="50,00"
                             text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                            linkButton1="/produto/id" nameButton1="Compartilhar"
-                            linkButton2="/produto/id" nameButton2="Ver mais"
+                            linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
+                            linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
                             />
                         </li>
                     </ul>

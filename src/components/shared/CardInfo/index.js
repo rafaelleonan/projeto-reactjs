@@ -23,7 +23,7 @@ export default class CardInfo extends Component{
                         <Typography gutterBottom variant="h5" component="h2">
                         { this.props.title }
                         </Typography>
-                        <Typography gutterBottom variant="h6" component="h2">
+                        <Typography gutterBottom variant="h6" component="h2" className="subtitulo">
                         { this.props.subtitle }
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
@@ -33,12 +33,14 @@ export default class CardInfo extends Component{
                     </CardActionArea>
                     <CardActions>
                         <a href={ this.props.linkButton1 }>
-                            <Button size="small" color="primary">
+                            <Button size="small" style={{ color:'#204ac8' }} className="button-card">
+                                <img src={ this.props.icon1 } alt={ this.props.altIcon1 } className="icon"/>
                                 { this.props.nameButton1 }
                             </Button>
                         </a>
                         <a href={ this.props.linkButton2 }>
-                            <Button size="small" color="primary">
+                            <Button size="small" style={{ color:'#204ac8' }} className="button-card">
+                                <img src={ this.props.icon2 } alt={ this.props.altIcon2 } className="icon"/>
                                 { this.props.nameButton2 }
                             </Button>
                         </a>

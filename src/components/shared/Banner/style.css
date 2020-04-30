@@ -11,7 +11,11 @@ div.titulo{
     justify-content: center;
 }
 div.titulo a {
-    color:#414141;
+    color:#204ac8;
+}
+h1{
+    margin-left: 10px;
+    margin-right: 10px;
 }
 hr, h1{
     position: relative;
@@ -20,7 +24,7 @@ hr, h1{
 }
 hr{
     flex-grow: 1;
-    height: 1px;
+    border:0.5px solid #204ac8;
 }
 div.banner{
     position: relative;

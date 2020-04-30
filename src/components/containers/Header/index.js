@@ -18,7 +18,7 @@ const Header = () => (
         </div>
         <div className="div-list">
             <ul className="list-options">
-                <li><img src={ carrinho } alt="Carrinho"/></li>
+                <li> <a href="/carrinho"><img src={ carrinho } alt="Carrinho"/></a></li>
                 <li><img src={ opcoes } alt="Mais opções"/></li>
             </ul>
         </div>
@@ -27,7 +27,8 @@ const Header = () => (
         <ul className="menu-list">
             <li><a href="/acessorios"><button type="button">Acessórios</button></a></li>
             <li><a href="/celulares"><button type="button">Celulares</button></a></li>
-            <li><a href="/marcas"><button type="button">Marcas</button></a></li>
+            <li><a href="/ajuda"><button type="button">Fale conosco</button></a></li>
+            <li><a href="/ajuda"><button type="button">Ajuda</button></a></li>
         </ul>
     </div>
 </div>

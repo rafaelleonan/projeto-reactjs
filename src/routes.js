@@ -3,7 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Produto from './pages/Produto';
 import Celulares from './pages/Celulares';
-import Marcas from './pages/Marcas';
+import Carrinho from './pages/Carrinho';
+import Ajuda from './pages/Ajuda';
 import Acessorios from './pages/Acessorios';
 
 const Routes = () => (
@@ -12,8 +13,9 @@ const Routes = () => (
             <Route exact path="/" component={ Home }/>
             <Route exact path="/produto/:id" component={ Produto }/>
             <Route exact path="/celulares" component={ Celulares }/>
-            <Route exact path="/marcas" component={ Marcas }/>
+            <Route exact path="/ajuda" component={ Ajuda }/>
             <Route exact path="/acessorios" component={ Acessorios }/>
+            <Route exact path="/carrinho" component={ Carrinho }/>
         </Switch>
     </BrowserRouter>
 );

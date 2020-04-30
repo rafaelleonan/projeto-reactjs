@@ -11,3 +11,21 @@
 a{
     text-decoration: none;
 }
+.subtitulo{
+    color:green;
+}
+.subtitulo:before{
+    content:'R$ '
+}
+.button-card{
+    color:#204ac8;
+    display:flex;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+img.icon{
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+}
