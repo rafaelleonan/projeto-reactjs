@@ -6,7 +6,9 @@ import Container from '@material-ui/core/Container';
 import Banner from '../../components/shared/Banner';
 import acessorios from '../../static/imagens/acessorios.jpg';
 import CardInfo from '../../components/shared/CardInfo';
-import Button from '../../components/shared/Button';
+import Botao from '../../components/shared/Botao';
+import carrinho from '../../static/icons/carrinho2.png';
+import ver_mais from '../../static/icons/ver_mais.png';
 
 
 export default class Acessorios extends Component{
@@ -49,57 +51,61 @@ export default class Acessorios extends Component{
                                 </select>
                             </div>
                             <div className="div-select">
-                                <Button name="Aplicar" tipo="submit" estilo="padrao" ></Button>
+                                <Botao name="Aplicar" tipo="submit" estilo="padrao" ></Botao>
                             </div>
                         </div>
                     </fieldset>
                     <div className="produtos">
-                        <ul className="list-card">
-                            <li>
-                                <CardInfo 
-                                    imagem={ capinha } 
-                                    titleHover="Capinha de celular" 
-                                    title="Capinha de celular" 
-                                    subtitle="50,00"
-                                    text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                                    linkButton1="/produto/id" nameButton1="Compartilhar"
-                                    linkButton2="/produto/id" nameButton2="Ver mais"
-                                />
-                            </li>
-                            <li>
+                    <ul className="list-card">
+                        <li>
                             <CardInfo 
                                 imagem={ capinha } 
                                 titleHover="Capinha de celular" 
                                 title="Capinha de celular" 
                                 subtitle="50,00"
+                                id={ 5 }
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                                linkButton1="/produto/id" nameButton1="Compartilhar"
-                                linkButton2="/produto/id" nameButton2="Ver mais"
-                                />
-                            </li>
-                            <li>
-                            <CardInfo 
-                                imagem={ capinha } 
-                                titleHover="Capinha de celular" 
-                                title="Capinha de celular" 
-                                subtitle="50,00"
-                                text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                                linkButton1="/produto/id" nameButton1="Compartilhar"
-                                linkButton2="/produto/id" nameButton2="Ver mais"
-                                />
-                            </li>
-                            <li>
-                            <CardInfo 
-                                imagem={ capinha } 
-                                titleHover="Capinha de celular" 
-                                title="Capinha de celular" 
-                                subtitle="50,00"
-                                text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                                linkButton1="/produto/id" nameButton1="Compartilhar"
-                                linkButton2="/produto/id" nameButton2="Ver mais"
-                                />
-                            </li>
-                        </ul>
+                                linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
+                                linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
+                            />
+                        </li>
+                        <li>
+                        <CardInfo 
+                            imagem={ capinha } 
+                            titleHover="Capinha de celular" 
+                            title="Capinha de celular" 
+                            subtitle="50,00"
+                            id={ 6 }
+                            text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
+                            linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
+                            linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
+                            />
+                        </li>
+                        <li>
+                        <CardInfo 
+                            imagem={ capinha } 
+                            titleHover="Capinha de celular" 
+                            title="Capinha de celular" 
+                            subtitle="50,00"
+                            id={ 7 }
+                            text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
+                            linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
+                            linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
+                            />
+                        </li>
+                        <li>
+                        <CardInfo 
+                            imagem={ capinha } 
+                            titleHover="Capinha de celular" 
+                            title="Capinha de celular" 
+                            subtitle="50,00"
+                            id={ 8 }
+                            text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
+                            linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
+                            linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
+                            />
+                        </li>
+                    </ul>
                     </div>
                 </Container>
             </main>

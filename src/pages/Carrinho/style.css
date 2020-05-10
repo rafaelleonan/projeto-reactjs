@@ -1,13 +1,14 @@
 fieldset.carrinho{
+  margin-top: 50px;
   position: relative;
   width: 100%;
-  border: 1px solid #696969;
+  border: none;
   border-radius: 10px;
   padding: 10px;
-  margin: 10px;
 }
 fieldset.carrinho legend{
   text-align: center;
+  color:black;
 }
 table.table{
   position: relative;
@@ -25,5 +26,16 @@ table.table tbody tr td{
   padding: 5px;
   text-align: center;
 }
-
+img.icon{
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+div.btn-carrinho{
+  position: relative;
+  float: right;
+  padding: 20px;
+  margin-bottom: 50px;
+}
 

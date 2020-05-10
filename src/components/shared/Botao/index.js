@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './style.css';
 
 
-export default class Button extends Component{
+export default class Botao extends Component{
     componentDidMount(){
         let btn = document.querySelector('#button');
         switch(this.props.estilo){

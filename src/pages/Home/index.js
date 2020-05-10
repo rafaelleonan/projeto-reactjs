@@ -28,6 +28,7 @@ export default class Home extends Component{
                                 titleHover="Celular" 
                                 title="Celular" 
                                 subtitle="100,00"
+                                id={ 1 }
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                 linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
                                 linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
@@ -39,6 +40,7 @@ export default class Home extends Component{
                             titleHover="Celular" 
                             title="Celular" 
                             subtitle="100,00"
+                            id={ 2 }
                             text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                             linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
                             linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
@@ -50,6 +52,7 @@ export default class Home extends Component{
                             titleHover="Celular" 
                             title="Celular" 
                             subtitle="100,00"
+                            id={ 3 }
                             text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                             linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
                             linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
@@ -61,6 +64,7 @@ export default class Home extends Component{
                             titleHover="Celular" 
                             title="Celular" 
                             subtitle="100,00"
+                            id={ 4 }
                             text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                             linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
                             linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
@@ -76,6 +80,7 @@ export default class Home extends Component{
                                 titleHover="Capinha de celular" 
                                 title="Capinha de celular" 
                                 subtitle="50,00"
+                                id={ 5 }
                                 text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                                 linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
                                 linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
@@ -87,6 +92,7 @@ export default class Home extends Component{
                             titleHover="Capinha de celular" 
                             title="Capinha de celular" 
                             subtitle="50,00"
+                            id={ 6 }
                             text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                             linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
                             linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
@@ -98,6 +104,7 @@ export default class Home extends Component{
                             titleHover="Capinha de celular" 
                             title="Capinha de celular" 
                             subtitle="50,00"
+                            id={ 7 }
                             text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                             linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
                             linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
@@ -109,6 +116,7 @@ export default class Home extends Component{
                             titleHover="Capinha de celular" 
                             title="Capinha de celular" 
                             subtitle="50,00"
+                            id={ 8 }
                             text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
                             linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
                             linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"

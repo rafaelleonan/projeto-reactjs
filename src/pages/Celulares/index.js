@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 import Banner from '../../components/shared/Banner';
 import banner from '../../static/imagens/banner.jpg';
 import CardInfo from '../../components/shared/CardInfo';
-import Button from '../../components/shared/Button';
+import Botao from '../../components/shared/Botao';
 
 
 export default class Categoria extends Component{
@@ -50,7 +50,7 @@ export default class Categoria extends Component{
                                 </select>
                             </div>
                             <div className="div-select">
-                                <Button name="Aplicar" tipo="submit" estilo="padrao" ></Button>
+                                <Botao name="Aplicar" tipo="submit" estilo="padrao" ></Botao>
                             </div>
                         </div>
                     </fieldset>
