@@ -1,21 +1,35 @@
 .card-wd{
-    max-width: 250px;
+    width: 250px;
+    height: 500px;
     transition: all 1s;
 }
 .card-wd:hover{
     box-shadow: 2px 2px 5px rgb(182, 182, 182);
 }
 .card-media{
-    min-height:250px;
+    position: relative;
+    max-height:100px;
 }
 a{
     text-decoration: none;
 }
+.titulo{
+    font-size: 12px;
+    height: 50px;
+    overflow: hidden;
+}
 .subtitulo{
+    font-size: 12px;
     color:green;
 }
 .subtitulo:before{
+    font-size: 12px;
     content:'R$ '
+}
+.description{
+    height: 85px;
+    font-size: 12px !important;
+    overflow: hidden;
 }
 .button-card{
     color:#204ac8;

@@ -24,7 +24,7 @@ export default class CardInfo extends Component{
         if (localStorage.hasOwnProperty("Car")) {
             produto = JSON.parse(localStorage.getItem("Car"))
         }else{
-            produto.push({'titulo': this.props.title, 'subtitulo': this.props.subtitle, 'id': this.props.id})
+            produto.push({'titulo': this.props.title, 'subtitulo': this.props.subtitle, 'id': this.props.id, 'qnt':1})
             produto = JSON.parse(localStorage.setItem("Car", JSON.stringify(produto)))
         }
         for(var i =0; i < produto.length; i++){
@@ -35,7 +35,7 @@ export default class CardInfo extends Component{
         if (ids.indexOf(this.props.id) > -1) {
             alert("Produto Já existe no carrinho!");
         } else {
-            produto.push({'titulo': this.props.title, 'subtitulo': this.props.subtitle, 'id': this.props.id})
+            produto.push({'titulo': this.props.title, 'subtitulo': this.props.subtitle, 'id': this.props.id, 'qnt':1})
         }
 
         /* Salva o item */
@@ -52,13 +52,13 @@ export default class CardInfo extends Component{
                         title={ this.props.titlehover }
                         />
                         <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
+                        <Typography gutterBottom className="titulo">
                         { this.props.title }
                         </Typography>
-                        <Typography gutterBottom variant="h6" component="h2" className="subtitulo">
+                        <Typography gutterBottom className="subtitulo">
                         { this.props.subtitle }
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p" id={ this.props.id }>
+                        <Typography variant="body2" color="textSecondary" component="p" id={ this.props.id } className="description">
                         { this.props.text }
                         </Typography>
                         </CardContent>

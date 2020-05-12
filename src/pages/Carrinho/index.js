@@ -10,62 +10,54 @@ import Botao from '../../components/shared/Botao';
 export default class Carrinho extends Component{
   criaCarrinho(){
     const result = document.querySelector("tbody")
-
+    let i = 0;
     if (localStorage.hasOwnProperty("Car")) {
       JSON.parse(localStorage.getItem("Car")).forEach(produto => {
-        result.insertAdjacentHTML('beforeend', `<tr class="tr"><td>${produto.titulo}</td><td class="preco">${produto.subtitulo}</td><td class="qnt">1</td><td class="totalUnidade"></td><td>${produto.id}</td><td><img src=${ remove } alt="Remover" class="icon" class="remove" /></td><td><img src=${ add } alt="Adicionar" class="icon" class="add"/></td></tr>`)
+        result.insertAdjacentHTML('beforeend', `<tr class="tr"><td>${produto.titulo}</td><td class="preco">${produto.subtitulo}</td><td class="qnt">${produto.qnt}</td><td class="totalUnidade"></td><td>${produto.id}</td><td><img src=${ remove } alt="Remover" class="remove" /></td><td><img src=${ add } alt="Adicionar" class="add"/></td></tr>`)
+        i++;
       })    
     }else{
       alert(JSON.parse(localStorage.getItem("Car")))
     }
   }
   remove(){
-    
-    // let tr = document.querySelector('.tr');
-    // let produto = new Array()
-    // tr.addEventListener("click", function(){
-    //   if (localStorage.hasOwnProperty("myCar")) {
-    //     produto = JSON.parse(localStorage.getItem("myCar"))
-    //   }
-    //   produto.splice(0,1)
-    //   localStorage.setItem("myCar", JSON.stringify(produto))
-    // })
-
-    // let tr = document.querySelectorAll('.tr');
-
-    // if (localStorage.hasOwnProperty("myCar")) {
-    //   let tr = document.querySelectorAll('.tr');
-    //   let remove = document.querySelectorAll(".remove");
-    //   let qnt = document.querySelectorAll(".qnt");
-    //   for(let i = 0; i < tr.length; i++){
-    //       remove[i].addEventListener("click", function(){
-    //       let newQnt = Number(qnt[i].textContent)
-    //       if(newQnt > 1){
-    //         newQnt -= 1
-    //         qnt[i].textContent = newQnt
-    //       }else{
-    //         alert('Remover o produto')
-    //       }
-    //     })
-    //   }
-    // }
+    let produto = new Array()
+    if (localStorage.hasOwnProperty("Car")) {
+      produto = JSON.parse(localStorage.getItem("Car"))
+      let tr = document.querySelectorAll('.tr');
+      let remove = document.querySelectorAll(".remove");
+      for(let i = 0; i < tr.length; i++){
+          remove[i].addEventListener("click", function(){
+          if(produto[i].qnt > 1){
+            produto[i].qnt -= 1
+            localStorage.setItem("Car", JSON.stringify(produto))
+            window.location.reload()
+          }else{
+            produto.splice(i,1)
+            localStorage.setItem("Car", JSON.stringify(produto))
+            window.location.reload()
+          }
+        })
+      }
+    }
   }
   add(){
-    // if (localStorage.hasOwnProperty("myCar")) {
-    //   let tr = document.querySelectorAll('.tr');
-    //   let add = document.querySelectorAll(".add");
-    //   let qnt = document.querySelectorAll(".qnt");
-    //   for(let i = 0; i < tr.length; i++){
-    //     add[i].addEventListener("click", function(){
-    //       let newQnt = Number(qnt[i].textContent)
-    //       newQnt += 1
-    //       qnt[i].textContent = newQnt
-    //     })
-    //   }
-    // }
+    let produto = new Array()
+    if (localStorage.hasOwnProperty("Car")) {
+      produto = JSON.parse(localStorage.getItem("Car"))
+      let tr = document.querySelectorAll('.tr');
+      let add = document.querySelectorAll(".add");
+      for(let i = 0; i < tr.length; i++){
+        add[i].addEventListener("click", function(){
+          produto[i].qnt += 1
+          localStorage.setItem("Car", JSON.stringify(produto))
+          window.location.reload()
+        })
+      }
+    }
   }
   totalProdutos(){
-    if(localStorage.hasOwnProperty("myCar")){
+    if(localStorage.hasOwnProperty("Car")){
       let tr = document.querySelectorAll('.tr');
       let qnt = document.querySelectorAll('.qnt');
       let qntTotal = document.querySelector('#totalProdutos');
@@ -77,19 +69,20 @@ export default class Carrinho extends Component{
     }
   }
   valorTotal(){
-    if(localStorage.hasOwnProperty("myCar")){
+    if(localStorage.hasOwnProperty("Car")){
       let tr = document.querySelectorAll('.tr');
       let preco = document.querySelectorAll('.preco');
+      let qnt = document.querySelectorAll('.qnt');
       let qntTotal = document.querySelector('#precoTotal');
       let total = 0
       for(var i = 0; i < tr.length; i++){
-        total += Number(preco[i].textContent.replace(",", "."))
+        total += (Number(preco[i].textContent.replace(",", "."))*Number(qnt[i].textContent))
       }
       qntTotal.textContent = total
     }
   }
   valorTotalProduto(){
-    if(localStorage.hasOwnProperty("myCar")){
+    if(localStorage.hasOwnProperty("Car")){
       let tr = document.querySelectorAll('.tr');
       let preco = document.querySelectorAll('.preco');
       let qnt = document.querySelectorAll('.qnt');
@@ -101,8 +94,13 @@ export default class Carrinho extends Component{
   }
   componentDidMount(){
     this.criaCarrinho()
+    this.totalProdutos()
+    this.valorTotal()
+    this.valorTotalProduto()
     this.remove()
     this.add()
+  }
+  componentWillUpdate(){
     this.totalProdutos()
     this.valorTotal()
     this.valorTotalProduto()

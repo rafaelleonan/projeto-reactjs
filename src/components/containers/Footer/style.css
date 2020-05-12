@@ -81,5 +81,6 @@ div.copyright{
     display: flex;
     align-items: center;
     justify-content: center;
-    color:#204ac8;
+    color:white;
+    background-color: #204ac8;
 }

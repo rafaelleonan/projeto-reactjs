@@ -8,24 +8,3 @@ main.content{
     padding-right: 10px;
     display: flex;
 }
-.card-wd{
-    max-width: 250px;
-    transition: all 1s;
-}
-.card-wd:hover{
-    box-shadow: 2px 2px 5px rgb(182, 182, 182);
-}
-.card-media{
-    min-height:250px;
-}
-ul.list-card{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-ul.list-card li{
-    display: inline-block;
-    flex-grow: 1;
-    margin:5px;
-}
