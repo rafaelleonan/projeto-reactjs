@@ -7,7 +7,6 @@ import Slide from '../../components/shared/Slide';
 import slide from '../../static/imagens/slide2.jpg'
 import CardInfo from '../../components/shared/CardInfo';
 import banner from '../../static/imagens/banner.jpg'
-import carrinho from '../../static/icons/carrinho2.png';
 import ver_mais from '../../static/icons/ver_mais.png';
 import api from '../../services/api';
 import axios from 'axios'
@@ -42,7 +41,7 @@ export default class Home extends Component{
         const { products, acessorios } = this.state;
         return(
             <main className="default content">
-                <Container maxWidth={ false }>
+                <Container maxWidth={ false } className="">
                     <Slide title="Slide aqui" text="Corpo do texto" slide={ slide } />
                     <Banner title="Celulares" foto={ banner } link="/celulares"/>
                     <Grid container spacing={1}>
@@ -60,8 +59,7 @@ export default class Home extends Component{
                                 subtitle={ product.value }
                                 id={ product.id }
                                 text={ product.description }
-                                linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
-                                linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
+                                linkButton2={`/produto/${product.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
                                 />
                             </Grid>
                         ))}
@@ -83,8 +81,7 @@ export default class Home extends Component{
                                 subtitle={ acessorio.value }
                                 id={ acessorio.id }
                                 text={ acessorio.description }
-                                linkButton1="/carrinho" nameButton1="Carrinho" icon1={ carrinho } altIcon1="Carrinho"
-                                linkButton2="/produto/id" nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
+                                linkButton2={`/produto/${acessorio.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
                                 />
                             </Grid>
                         ))}

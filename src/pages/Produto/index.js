@@ -3,60 +3,109 @@ import './style.css';
 import '../../style.css';
 import foto from '../../static/imagens/foto.jpg';
 import Container from '@material-ui/core/Container';
+import api from '../../services/api';
+import axios from 'axios'
 
 export default class Produto extends Component{
+    state = {
+        product:{}
+    }
+    componentDidMount(){
+        let id = this.props.match.params.id;
+        this.loadProduto(id);
+    }
+    loadProduto = (id) => {
+        axios.get(api+`/selectproduct?op=totaldescription&id=${id}`).then(response => {
+            console.log(response)
+            this.setState({ product:response.data[0] })
+        }, response =>{
+            console.log(response)
+        })
+    }
     render(){
+        const { product } = this.state; 
         return(
             <main className="default">
                 <Container maxWidth={ false }>
                     <div className="produto">
                         <div className="inline-foto">
-                            <img src={ foto } alt="Foto"/>
+                            <img src={ product.url } alt="Foto"/>
                         </div>
                         <div className="inline-desc">
                             <div className="titulo">
-                                <h3> Nome produto </h3>
+                                <h3> { product.nameproduct } </h3>
                             </div>
                             <div className="des">
-                                <p> Resistente à água, conjunto de câmeras completamente novo, melhor desempenho e bateria com maior duração, alto-falantes estéreo e tela com mais brilho e cores. Este é o iPhone 7 Plus da Apple</p>
+                                <p> { product.description }</p>
                             </div>
                             <div className="preco">
-                                <p> R$ 1.200,00</p>
+                                <p>R$ { product.value }</p>
                             </div>
-                            <div className="compra">
+                            {/* <div className="compra">
                                 <button type="button">Adicionar ao carrinho</button>
                                 <button type="button">Comprar</button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <fieldset className="ficha-tecnica">
                         <legend>Ficha técnica</legend>
-                        <table className="table" BORDER RULES="rows">
-                            <tr>
-                                <td>Modelo</td><td>A1784 - MNQN2BZ</td>
-                            </tr>
-                            <tr>
-                                <td>Dimensões</td><td>iPhone 158.2 x 77.9 x 7.3 mm - Embalagem 9.8 x 5.0 x 17.3cm</td>
-                            </tr>
-                            <tr>
-                                <td>Cor</td><td>Prata.</td>
-                            </tr>
-                            <tr>
-                                <td>Conectividade</td><td>NFC (Apple Pay only) - GPS assistido e GLONASS</td>
-                            </tr>
-                            <tr>
-                                <td>Processador</td><td>Apple A10 Fusion - Quad-core 2.23 GHz - GPU Six-core</td>
-                            </tr>
-                            <tr>
-                                <td>Memória</td><td>Interna 32GB - 3GB RAM</td>
-                            </tr>
-                            <tr>
-                                <td>Chip</td><td>Nano-SIM</td>
-                            </tr>
-                            <tr>
-                                <td>Camera</td><td>Dual 12MP (Grande-angular abertura /1.8) (Teleobjetiva abertura /2.8)- Zoom digital até 5x - Sen</td>
-                            </tr>
-
+                        <table className="table">
+                            <tbody>
+                                <tr>
+                                    <td>Modelo</td><td>{ product.model }</td>
+                                </tr>
+                                <tr>
+                                    <td>Resolução</td><td>{ product.resolution }</td>
+                                </tr>
+                                <tr>
+                                    <td>Dimensões</td><td>{ product.dimension }</td>
+                                </tr>
+                                <tr>
+                                    <td>Cor</td><td>{ product.color }</td>
+                                </tr>
+                                <tr>
+                                    <td>Conectividade</td><td>{ product.connectivity }</td>
+                                </tr>
+                                <tr>
+                                    <td>Processador</td><td>{ product.processor }</td>
+                                </tr>
+                                <tr>
+                                    <td>Memória</td><td>{ product.memory }</td>
+                                </tr>
+                                <tr>
+                                    <td>Chip</td><td>{ product.chip }</td>
+                                </tr>
+                                <tr>
+                                    <td>Peso</td><td>{ product.weight }</td>
+                                </tr>
+                                <tr>
+                                    <td>Camera</td><td>{ product.camera }</td>
+                                </tr>
+                                <tr>
+                                    <td>Frequência</td><td>{ product.frequency }</td>
+                                </tr>
+                                <tr>
+                                    <td>Bateria</td><td>{ product.drums }</td>
+                                </tr>
+                                <tr>
+                                    <td>Polegadas</td><td>{ product.inches }</td>
+                                </tr>
+                                <tr>
+                                    <td>Conexões</td><td>{ product.connections }</td>
+                                </tr>
+                                <tr>
+                                    <td>Sistema operacional</td><td>{ product.operationalsystem }</td>
+                                </tr>
+                                <tr>
+                                    <td>bluetooth</td><td>{ product.bluetooth }</td>
+                                </tr>
+                                <tr>
+                                    <td>Tensão de alimentação</td><td>{ product.powervoltage }</td>
+                                </tr>
+                                <tr>
+                                    <td>Wi-fi</td><td>{ product.wifi }</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </fieldset>
                 </Container>

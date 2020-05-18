@@ -7,39 +7,12 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom'; 
+
 
 export default class CardInfo extends Component{
     constructor(props) {
         super(props);
-        this.addMyCar = this.addMyCar.bind(this);
-    }
-    addMyCar() {
-        let produto = new Array()
-        let ids = new Array()
-
-        /**
-         * Verifica se a propriedade existe
-         * Caso exista, converte de String para Object
-         */
-        if (localStorage.hasOwnProperty("Car")) {
-            produto = JSON.parse(localStorage.getItem("Car"))
-        }else{
-            produto.push({'titulo': this.props.title, 'subtitulo': this.props.subtitle, 'id': this.props.id, 'qnt':1})
-            produto = JSON.parse(localStorage.setItem("Car", JSON.stringify(produto)))
-        }
-        for(var i =0; i < produto.length; i++){
-            ids[i] = produto[i].id
-        }
-
-        /* Adiciona um novo valor no array criado */
-        if (ids.indexOf(this.props.id) > -1) {
-            alert("Produto Já existe no carrinho!");
-        } else {
-            produto.push({'titulo': this.props.title, 'subtitulo': this.props.subtitle, 'id': this.props.id, 'qnt':1})
-        }
-
-        /* Salva o item */
-        localStorage.setItem("Car", JSON.stringify(produto))
     }
     render(){
         return(
@@ -64,18 +37,12 @@ export default class CardInfo extends Component{
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <a href={ this.props.linkButton1 } onClick={this.addMyCar}>
-                            <Button size="small" style={{ color:'#204ac8' }} className="button-card">
-                                <img src={ this.props.icon1 } alt={ this.props.altIcon1 } className="icon"/>
-                                { this.props.nameButton1 }
-                            </Button>
-                        </a>
-                        <a href={ this.props.linkButton2 }>
+                        <Link to={ this.props.linkButton2 } className="button">
                             <Button size="small" style={{ color:'#204ac8' }} className="button-card">
                                 <img src={ this.props.icon2 } alt={ this.props.altIcon2 } className="icon"/>
                                 { this.props.nameButton2 }
                             </Button>
-                        </a>
+                        </Link>
                     </CardActions>
                 </Card>
             </div>

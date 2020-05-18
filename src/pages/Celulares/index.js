@@ -7,10 +7,29 @@ import Banner from '../../components/shared/Banner';
 import banner from '../../static/imagens/banner.jpg';
 import CardInfo from '../../components/shared/CardInfo';
 import Botao from '../../components/shared/Botao';
+import ver_mais from '../../static/icons/ver_mais.png';
+import api from '../../services/api';
+import axios from 'axios'
+import Grid from '@material-ui/core/Grid';
 
 
 export default class Categoria extends Component{
+    state = {
+        products:[],
+    }
+    loadProducts = () =>{
+        axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag=1').then(response => {
+            console.log(response)
+            this.setState({ products:response.data })
+        }, response =>{
+            console.log(response)
+        })
+    }
+    componentDidMount(){
+        this.loadProducts()
+    }
     render(){
+        const { products } = this.state;
         return(
             <main className="default content">
                 <Container maxWidth={ false }>
@@ -55,52 +74,27 @@ export default class Categoria extends Component{
                         </div>
                     </fieldset>
                     <div className="produtos">
-                        <ul className="list-card">
-                            <li>
+                    <Grid container spacing={1}>
+                        <Grid container item xs={12} spacing={3} 
+                        direction="row"
+                        justify="space-between"
+                        alignItems="center"
+                        >
+                        {products.map(product =>(
+                            <Grid item xs={3}>
                                 <CardInfo 
-                                    imagem={ cel } 
-                                    titleHover="Celular" 
-                                    title="Celular" 
-                                    subtitle="100,00"
-                                    text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                                    linkButton1="/produto/id" nameButton1="Compartilhar"
-                                    linkButton2="/produto/id" nameButton2="Ver mais"
+                                imagem={ product.url } 
+                                titleHover={ product.nameproduct }
+                                title={ product.nameproduct } 
+                                subtitle={ product.value }
+                                id={ product.id }
+                                text={ product.description }
+                                linkButton2={`/produto/${product.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
                                 />
-                            </li>
-                            <li>
-                            <CardInfo 
-                                imagem={ cel } 
-                                titleHover="Celular" 
-                                title="Celular" 
-                                subtitle="100,00"
-                                text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                                linkButton1="/produto/id" nameButton1="Compartilhar"
-                                linkButton2="/produto/id" nameButton2="Ver mais"
-                                />
-                            </li>
-                            <li>
-                            <CardInfo 
-                                imagem={ cel } 
-                                titleHover="Celular" 
-                                title="Celular" 
-                                subtitle="100,00"
-                                text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                                linkButton1="/produto/id" nameButton1="Compartilhar"
-                                linkButton2="/produto/id" nameButton2="Ver mais"
-                                />
-                            </li>
-                            <li>
-                            <CardInfo 
-                                imagem={ cel } 
-                                titleHover="Celular" 
-                                title="Celular" 
-                                subtitle="100,00"
-                                text="React é uma biblioteca JavaScript para construção de interfaces de usuário"
-                                linkButton1="/produto/id" nameButton1="Compartilhar"
-                                linkButton2="/produto/id" nameButton2="Ver mais"
-                                />
-                            </li>
-                        </ul>
+                            </Grid>
+                        ))}
+                        </Grid>
+                    </Grid>
                     </div>
                 </Container>
             </main>

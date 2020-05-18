@@ -1,12 +1,12 @@
 import React from 'react';
 import './style.css';
-import insta from '../../../static/icons/instagram.png';
-import face from '../../../static/icons/facebook.png';
-import twitter from '../../../static/icons/twitter.png';
+// import insta from '../../../static/icons/instagram.png';
+// import face from '../../../static/icons/facebook.png';
+// import twitter from '../../../static/icons/twitter.png';
 
 const Footer = () =>(
     <footer>
-        <div id="info-footer">
+        {/* <div id="info-footer">
             <div className="block-div">
                 <h2>Contatos</h2>
                 <ul className="list-footer">
@@ -31,7 +31,7 @@ const Footer = () =>(
                     <li><a href="#"> <img src={ twitter } alt="Twitter"/></a></li>
                 </ul>
             </div>
-        </div>
+        </div> */}
         <div className="copyright">
             Copyright © 2020 - Nome da empresa. Todos os direitos reservados
         </div>
