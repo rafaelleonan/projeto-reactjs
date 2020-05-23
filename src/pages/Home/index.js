@@ -19,7 +19,6 @@ export default class Home extends Component{
     }
     loadProducts = () =>{
         axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag=1').then(response => {
-            console.log(response)
             this.setState({ products:response.data })
         }, response =>{
             console.log(response)
@@ -27,7 +26,6 @@ export default class Home extends Component{
     }
     loadAcessorios = () =>{
         axios.get(api+'/selectproduct?op=totalporcat&namecat=acessorios&pag=1').then(response => {
-            console.log(response)
             this.setState({ acessorios:response.data })
         }, response =>{
             console.log(response)
@@ -51,7 +49,7 @@ export default class Home extends Component{
                         alignItems="center"
                         >
                         {products.map(product =>(
-                            <Grid item xs={3}>
+                            <Grid item xs={3} key={ product.id }>
                                 <CardInfo 
                                 imagem={ product.url } 
                                 titleHover={ product.nameproduct }
@@ -73,7 +71,7 @@ export default class Home extends Component{
                         alignItems="center"
                         >
                         {acessorios.map(acessorio =>(
-                            <Grid item xs={3}>
+                            <Grid item xs={3} key={ acessorio.id }>
                                 <CardInfo 
                                 imagem={ acessorio.url } 
                                 titleHover={ acessorio.nameproduct }

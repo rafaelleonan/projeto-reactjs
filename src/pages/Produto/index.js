@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
 import '../../style.css';
-import foto from '../../static/imagens/foto.jpg';
 import Container from '@material-ui/core/Container';
 import api from '../../services/api';
 import axios from 'axios'
@@ -16,7 +15,6 @@ export default class Produto extends Component{
     }
     loadProduto = (id) => {
         axios.get(api+`/selectproduct?op=totaldescription&id=${id}`).then(response => {
-            console.log(response)
             this.setState({ product:response.data[0] })
         }, response =>{
             console.log(response)

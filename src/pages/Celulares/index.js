@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
 import '../../style.css';
-import cel from '../../static/imagens/cel.jpg';
 import Container from '@material-ui/core/Container';
 import Banner from '../../components/shared/Banner';
 import banner from '../../static/imagens/banner.jpg';
@@ -14,12 +13,69 @@ import Grid from '@material-ui/core/Grid';
 
 
 export default class Categoria extends Component{
-    state = {
-        products:[],
-    }
-    loadProducts = () =>{
-        axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag=1').then(response => {
+    constructor(props) {
+        super(props);
+        this.state = {
+            products:[],
+            ordemAlfa:[{ value:'Normal', opcao:'Normal' },{ value:'CRESC', opcao:'Crescente' }, { value:'DESC', opcao:'Decrescente' }],
+            ordemPreco:[{ value:'Todos', opcao:'Todos' },{ value:'1-600', opcao:'Até R$ 600' } , { value:'601-700', opcao:'R$ 601 - R$ 700' }, { value:'701-800', opcao:'R$ 701 - R$ 800' }, { value:'801-900', opcao:'R$ 901 - R$ 1000' }],
+            ordemMarca:[{ value:'Todas', opcao:'Todas' },{ value:'Apple', opcao:'Apple' }, { value:'LG', opcao:'LG' } , { value:'Motorola', opcao:'Motorola' } , { value:'Samsung', opcao:'Samsung' } , { value: 'Xiaomi', opcao: 'Xiaomi' }],
+            ordem:'Normal',
+            preco:'Todos',
+            marca:'Todas'
+        }
+        this.handleChangeOrdem = this.handleChangeOrdem.bind(this);
+        this.handleChangePreco = this.handleChangePreco.bind(this);
+        this.handleChangeMarca = this.handleChangeMarca.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+    
+      handleChangeOrdem(event) {
+        this.setState({ordem: event.target.value});
+      }
+      handleChangePreco(event) {
+        this.setState({preco: event.target.value});
+      }
+      handleChangeMarca(event) {
+        this.setState({marca: event.target.value});
+      }
+    
+      handleSubmit(event) {
+        let filter = '?op=totalporcat&namecat=celulares'
+        if(this.state.ordem != 'Normal'){
+            filter += `&order=${this.state.ordem}`
+        }
+        if(this.state.preco != 'Todos'){
+            let preco = this.state.preco.split('-')
+            let value1 = preco[0]
+            let value2 = preco[1]
+            filter += `&value1=${value1}&value2=${value2}`
+        }
+        if(this.state.marca != 'Todas'){
+            filter += `&brand=${this.state.marca}`
+        }
+        axios.get(api+`/selectproduct${filter}&pag=1`).then(response => {
+            this.setState({ products:response.data })
+        }, response =>{
             console.log(response)
+        })
+        event.preventDefault();
+      }
+    loadProducts = () =>{
+        let filter = '?op=totalporcat&namecat=celulares'
+        if(this.state.ordem != 'Normal'){
+            filter += `&order=${this.state.ordem}`
+        }
+        if(this.state.preco != 'Todos'){
+            let preco = this.state.preco.split('-')
+            let value1 = preco[0]
+            let value2 = preco[1]
+            filter += `&value1=${value1}&value2=${value2}`
+        }
+        if(this.state.marca != 'Todas'){
+            filter += `&brand=${this.state.marca}`
+        }
+        axios.get(api+`/selectproduct${filter}&pag=1`).then(response => {
             this.setState({ products:response.data })
         }, response =>{
             console.log(response)
@@ -28,50 +84,46 @@ export default class Categoria extends Component{
     componentDidMount(){
         this.loadProducts()
     }
+
     render(){
-        const { products } = this.state;
+        const { products, ordemAlfa, ordemPreco, ordemMarca, ordem, preco, marca } = this.state;
         return(
             <main className="default content">
                 <Container maxWidth={ false }>
                     <Banner title="Celulares" foto={ banner } link="#"/>
                     <fieldset className="config">
                         <legend>Ordenar por</legend>
+                        <form onSubmit={this.handleSubmit}>
                         <div className="filtro">
                             <div className="div-select">
-                                <label for="alfa">Ordem alfabética:</label>
-                                <select id="alfa" name="select-alfa" className="select">
-                                    <option value="Todas" selected>Aleatória</option>
-                                    <option value="a_z"> A - Z</option>
-                                    <option value="z_a"> Z - A</option>
+                                <label htmlFor="alfa">Ordem alfabética:</label>
+                                <select id="alfa" value={ordem} onChange={this.handleChangeOrdem} className="select">
+                                    { ordemAlfa.map( ordem =>(
+                                        <option key={ ordem.value } value={ ordem.value }>{ ordem.opcao }</option>
+                                    )) }
                                 </select>
                             </div>
                             <div className="div-select">
-                                <label for="preco">Preço:</label>
-                                <select id="preco" name="select-preco" className="select">
-                                    <option value="Todos" selected>Todos</option>
-                                    <option value="preco1">R$ 500 - R$ 600</option>
-                                    <option value="preco2">R$ 601 - R$ 700</option>
-                                    <option value="preco3">R$ 701 - R$ 800</option>
-                                    <option value="preco3">R$ 801 - R$ 900</option>
-                                    <option value="preco3">R$ 901 - R$ 1000</option>
-                                    <option value="preco3">Acima de R$ 1000</option>
+                                <label htmlFor="preco">Preço:</label>
+                                <select id="preco" value={preco} onChange={this.handleChangePreco} className="select">
+                                    { ordemPreco.map( ordem =>(
+                                        <option key={ ordem.value } value={ ordem.value }>{ ordem.opcao }</option>
+                                    )) }
                                 </select>
                             </div>
                             <div className="div-select">
-                                <label for="marca">Marca:</label>
-                                <select id="marca" name="select-marca" className="select">
-                                    <option value="Todas" selected>Todas</option>
-                                    <option value="apple">Apple</option>
-                                    <option value="lg">LG</option>
-                                    <option value="motorola">Motorola</option>
-                                    <option value="samsung">Samsung</option>
-                                    <option value="xiaomi">Xiaomi</option>
+                                <label htmlFor="marca">Marca:</label>
+                                <select id="marca" value={marca} onChange={this.handleChangeMarca} className="select">
+                                    { ordemMarca.map( ordem =>(
+                                        <option key={ ordem.value } value={ ordem.value }>{ ordem.opcao }</option>
+                                    )) }
                                 </select>
                             </div>
                             <div className="div-select">
                                 <Botao name="Aplicar" tipo="submit" estilo="padrao" ></Botao>
                             </div>
                         </div>
+                        </form>
                     </fieldset>
                     <div className="produtos">
                     <Grid container spacing={1}>
@@ -81,7 +133,7 @@ export default class Categoria extends Component{
                         alignItems="center"
                         >
                         {products.map(product =>(
-                            <Grid item xs={3}>
+                            <Grid item xs={3} key={ product.id }>
                                 <CardInfo 
                                 imagem={ product.url } 
                                 titleHover={ product.nameproduct }
