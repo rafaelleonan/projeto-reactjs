@@ -4,11 +4,10 @@ import Footer from '../src/components/containers/Footer';
 import Routes from './routes';
 import './style.css';
 
-
 const App = () => (
   <div className="App">
       <Header />
-      <Routes />
+      <Routes />  
       <Footer />
   </div>
 );

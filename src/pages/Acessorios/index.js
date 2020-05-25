@@ -93,26 +93,26 @@ export default class Acessorios extends Component{
                         <form onSubmit={this.handleSubmit}>
                         <div className="filtro">
                             <div className="div-select">
-                                <label for="alfa">Ordem alfabética:</label>
+                                <label htmlFor="alfa">Ordem alfabética:</label>
                                 <select id="alfa" value={ordem} onChange={this.handleChangeOrdem} className="select">
                                     { ordemAlfa.map( ordem =>(
-                                        <option value={ ordem.value }>{ ordem.opcao }</option>
+                                        <option key={ordem.value} value={ ordem.value }>{ ordem.opcao }</option>
                                     )) }
                                 </select>
                             </div>
                             <div className="div-select">
-                                <label for="preco">Preço:</label>
+                                <label htmlFor="preco">Preço:</label>
                                 <select id="preco" value={preco} onChange={this.handleChangePreco} className="select">
                                     { ordemPreco.map( ordem =>(
-                                        <option value={ ordem.value }>{ ordem.opcao }</option>
+                                        <option key={ordem.value} value={ ordem.value }>{ ordem.opcao }</option>
                                     )) }
                                 </select>
                             </div>
                             <div className="div-select">
-                                <label for="marca">Marca:</label>
+                                <label htmlFor="marca">Marca:</label>
                                 <select id="marca" value={marca} onChange={this.handleChangeMarca} className="select">
                                     { ordemMarca.map( ordem =>(
-                                        <option value={ ordem.value }>{ ordem.opcao }</option>
+                                        <option key={ordem.value} value={ ordem.value }>{ ordem.opcao }</option>
                                     )) }
                                 </select>
                             </div>
