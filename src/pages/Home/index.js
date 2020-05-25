@@ -44,14 +44,10 @@ export default class Home extends Component{
                 <Container maxWidth={ false } className="">
                     <Slide title="Slide aqui" text="Corpo do texto" slide={ slide } />
                     <Banner title="Celulares" foto={ banner } link="/celulares"/>
-                    <Grid container spacing={1}>
-                        <Grid container item xs={12} spacing={3} 
-                        direction="row"
-                        justify="space-between"
-                        alignItems="center"
-                        >
+                    <Grid container spacing={1}   className="grid">
+                       <div className="pptotal">
                         {products.map(product =>(
-                            <Grid item xs={3}>
+                            <Grid item xs={3} className="griditem">  
                                 <CardInfo 
                                 imagem={ product.url } 
                                 titleHover={ product.nameproduct }
@@ -60,20 +56,17 @@ export default class Home extends Component{
                                 id={ product.id }
                                 text={ product.description }
                                 linkButton2={`/produto/${product.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
-                                />
+                               
+                               />
                             </Grid>
                         ))}
-                        </Grid>
+                       </div>
                     </Grid>
                     <Banner title="Acessórios" foto={ banner } link="/acessorios"/>
-                    <Grid container spacing={1}>
-                        <Grid container item xs={12} spacing={3} 
-                        direction="row"
-                        justify="space-between"
-                        alignItems="center"
-                        >
+                    <Grid container spacing={1} className="grid">
+                    <div className="pptotal">
                         {acessorios.map(acessorio =>(
-                            <Grid item xs={3}>
+                            <Grid item xs={3} className="griditem">
                                 <CardInfo 
                                 imagem={ acessorio.url } 
                                 titleHover={ acessorio.nameproduct }
@@ -85,7 +78,7 @@ export default class Home extends Component{
                                 />
                             </Grid>
                         ))}
-                        </Grid>
+                        </div>
                     </Grid>
                 </Container>
             </main>

@@ -33,7 +33,12 @@ const Footer = () =>(
             </div>
         </div> */}
         <div className="copyright">
-            Copyright © 2020 - Nome da empresa. Todos os direitos reservados
+            <ul>
+               <li>Copyright © 2020. </li> 
+               <li> Nome da empresa.</li> 
+               <li> Todos os direitos reservados.</li> 
+            </ul>
+          
         </div>
     </footer>
 );

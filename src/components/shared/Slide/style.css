@@ -1,6 +1,8 @@
 div.slide{
     position: relative;
     width: 100%;
+    border:10px solid black;
+    
     height: 270px;
     margin-bottom:10px;
     margin-top:60px;
@@ -19,3 +21,9 @@ div.conteudo-slide{
     background:transparent;
     padding:10px;
 }
+
+/* @media (max-width: 420px) {
+    div.slide{
+width: 140%;
+    }
+} */

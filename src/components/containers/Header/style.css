@@ -1,13 +1,13 @@
 div.content{
     position: relative;
 }
-header#header{
+header.header{
     position: fixed;
     top:0px;
     height: 80px;
     z-index: 1;
     background:	#204ac8;
-    width:100%;
+    width:100vw;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -17,9 +17,11 @@ img.logo{
     position: relative;
     width: 80px;
     height: 80px;
-    margin-right: 50px;
+    margin-right: auto;
+    /* display: none; */
 }
 a.a-logo{
+  
     position: relative;
     display: contents;
     width: 80px;
@@ -28,8 +30,8 @@ a.a-logo{
 div.div-search{
     position: relative;
     height: 40px;
-    margin-left: 50px;
-    margin-right: 50px;
+    /* display: none; */
+   
     background-color: white;
     border-radius: 5px;
     border: 1px solid #ddd;
@@ -81,6 +83,7 @@ div.div-list ul.list-options li{
     cursor: pointer;
     border-radius: 5px;
     margin:2px;
+    margin-left: auto;
     border-bottom:2px solid #204ac8;
 }
 div.div-list ul.list-options li a{
@@ -99,75 +102,101 @@ div.div-list ul.list-options li:hover{
 }
 
 
-@media screen and (max-width: 360px) and (max-height: 640px){
-    header#header{
-        position: fixed;
-        top:0px;
-        height: 80px;
-        z-index: 1;
-        background:	#204ac8;
-        max-width:100%;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-	div.content {
-        max-width: 100%;
-    }
-    div.div-search{
-        position: relative;
-        height: 40px;
-        margin-left: 10px;
-        margin-right: 10px;
-        background-color: white;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-    }
+
+.header.on{
+    position: fixed;
+   
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+ 
+} 
+.one,.two,.three{
+    background-color: #fff;
+    height:5px;
+    width:100%;
+    margin:6px auto;
+    transition-duration:0.2;
+}
+.menu-toggle{
+    width:40px;
+    height:30px;
+    margin-right:50px;
+   display:none;
+   position: absolute;
+   float:right;
+   right:-10px;
+   /* border: 1px solid black; */
+   top:20px;
+
+}
+header.on .menu-toggle .one{
+    transform:rotate(45deg) translate(7px,7px);
+}
+header.on .menu-toggle .two{
+    opacity:0;
+}
+header.on .menu-toggle .three{
+    transform:rotate(-45deg) translate(8px,-10px);
+}
+
+header.on .div-search,header.on .a-logo{
+    display:none;
+}
+header.on div.div-list ul.list-options{
+display: block;
+}
+
+@media (max-width: 905px) {
+
+        div.div-search input[type="search"]{
+            width: 200px;
+         }
+
+}
+@media (max-width: 753px) {
+
+div.div-search{
+       margin-right: auto;
+}   
+div.div-search input[type="search"]{
+    margin-left: auto;
+    margin-right: auto;
+    width: 130px;
+ }
+ div.div-list ul.list-options{
+     display: none;
+ }
+/* para colocar na hora q tiver  ligado o menu */
+ div.div-list ul.list-options li{
+   
+     display: block;
+     text-align: center;
+  
+ }
+ div.div-list ul.list-options li a{
+     font-size: 2rem;
+     transition-duration: 0.3s;
+ }
+
+  /* para colocar na hora q tiver  ligado o menu */
+ .menu-toggle{
+     display: block;
+ }
+
+
+
+
+
+}
+
+
+
+@media (max-width: 320px) {
     div.div-search input[type="search"]{
-        position: relative;
-        height: 100%;
-        width: 170px;
-        border-radius: 5px;
-        border:none;
-        background-color: white;
-        padding:5px;
-    }
-    div.div-search button{
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-items: center;
-        height: 100%;
-        border-left:1px solid #ddd;
-        border-right:none;
-        border-top:none;
-        border-bottom:none;
-        border-radius: 5px;
-        background: transparent;
-        cursor: pointer;
-        float: right;
-        padding:4px;
-        opacity: 0.5;
-    }
-    img.logo{
-        position: relative;
-        width: 50px;
-        height: 50px;
-    }
-    a.a-logo{
-        position: relative;
-        display: contents;
-        width: 50px;
-        height: 50px;
-        float: left;
-    }
-    div.div-list{
-        position: relative;
-        display: contents;
-        margin-left: 20px;
-        margin-right: 0px;
-        border-radius: 5px;
-    }
-    
+        margin-left: auto;
+        margin-right: auto;
+        width: 80px;
+     }
 }
