@@ -84,3 +84,15 @@ div.copyright{
     color:white;
     background-color: #204ac8;
 }
+div.copyright ul{
+    display:flex;
+    list-style: none;
+    text-align: center;
+    transition: linear 2s;
+}
+@media (max-width: 800px) {
+    div.copyright ul{
+flex-direction:column;
+    }
+
+}

@@ -124,13 +124,9 @@ export default class Acessorios extends Component{
                     </fieldset>
                     <div className="produtos">
                     <Grid container spacing={1}>
-                        <Grid container item xs={12} spacing={3} 
-                        direction="row"
-                        justify="space-between"
-                        alignItems="center"
-                        >
+                       <div className="pptotal">
                         {acessorios.map(acessorio =>(
-                            <Grid item xs={3} key={ acessorio.id }>
+                            <Grid item xs={3} key={ acessorio.id } className="griditem">
                                 <CardInfo 
                                 imagem={ acessorio.url } 
                                 titleHover={ acessorio.nameproduct }
@@ -142,7 +138,7 @@ export default class Acessorios extends Component{
                                 />
                             </Grid>
                         ))}
-                        </Grid>
+                       </div>
                     </Grid>
                     </div>
                 </Container>

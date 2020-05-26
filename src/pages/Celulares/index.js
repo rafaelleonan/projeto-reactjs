@@ -127,13 +127,9 @@ export default class Categoria extends Component{
                     </fieldset>
                     <div className="produtos">
                     <Grid container spacing={1}>
-                        <Grid container item xs={12} spacing={3} 
-                        direction="row"
-                        justify="space-between"
-                        alignItems="center"
-                        >
+                        <div className="pptotal">
                         {products.map(product =>(
-                            <Grid item xs={3} key={ product.id }>
+                            <Grid item xs={3} key={ product.id } className="griditem">
                                 <CardInfo 
                                 imagem={ product.url } 
                                 titleHover={ product.nameproduct }
@@ -145,7 +141,7 @@ export default class Categoria extends Component{
                                 />
                             </Grid>
                         ))}
-                        </Grid>
+                        </div>
                     </Grid>
                     </div>
                 </Container>
