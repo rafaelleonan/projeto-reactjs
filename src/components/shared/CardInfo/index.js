@@ -18,6 +18,7 @@ export default class CardInfo extends Component{
         return(
             <div>
                 <Card className="card-wd">
+                <Link to={ this.props.linkButton2 } className="button">
                     <CardActionArea>
                         <CardMedia
                         className="card-media"
@@ -36,7 +37,8 @@ export default class CardInfo extends Component{
                         </Typography>
                         </CardContent>
                     </CardActionArea>
-                    <CardActions>
+                    </Link>
+                    <CardActions class="cardaction">
                         <Link to={ this.props.linkButton2 } className="button">
                             <Button size="small" style={{ color:'#204ac8' }} className="button-card">
                                 <img src={ this.props.icon2 } alt={ this.props.altIcon2 } className="icon"/>

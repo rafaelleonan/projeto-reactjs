@@ -15,10 +15,12 @@ export default class Header extends Component{
         window.onresize = scroll;
 
         function scroll(){
+            document.body.style.overflowX = "hidden";
         if(window.innerWidth>748){
             const menuSection = document.querySelector("header");
             menuSection.classList.toggle("on",false);
-            document.body.style.overflow = "initial";
+            document.body.style.overflowY = "scroll";
+            
         }
         
         }
@@ -42,12 +44,10 @@ export default class Header extends Component{
                     </div>
                 
                     <div className="menu-toggle" onClick={()=>{
-                    document.body.style.overflow = show ?"hidden":"initial";
 
+                    document.body.style.overflow = show ?"hidden":"initial";
                     const menuSection = document.querySelector("header");
-                    
                     menuSection.classList.toggle("on",show);
-                   
                     show =!show;
 
                     }}>

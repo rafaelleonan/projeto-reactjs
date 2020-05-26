@@ -46,6 +46,8 @@ body{
 
     .pptotal{
         grid-template-columns:1fr 1fr;
+        grid-gap:5px;
+        justify-content:center;
         
     }  
 
