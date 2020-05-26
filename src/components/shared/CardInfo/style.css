@@ -52,7 +52,7 @@ img.icon{
     
     .card-wd{
         width: 40vw !important;
-        height:  340px !important;
+        height:  300px !important;
       
      
     }
@@ -62,11 +62,11 @@ img.icon{
         top:-80px;
         
     }
-    .cardaction{
+    /* .cardaction{
         position:relative;
         top:-150px;
         font-size:12px !important;
-    }
+    } */
     .cardcontent{
         position: relative;
         top:-150px;

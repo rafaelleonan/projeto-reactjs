@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {useState,useEffect } from 'react';
 import './style.css';
 import '../../style.css';
 import Container from '@material-ui/core/Container';
@@ -11,34 +11,49 @@ import ver_mais from '../../static/icons/ver_mais.png';
 import api from '../../services/api';
 import axios from 'axios'
 import Grid from '@material-ui/core/Grid';
+import Button from '../../components/shared/Botao';
+import Button1 from '../../components/shared/Botao';
 
-export default class Home extends Component{
-    state = {
-        products:[],
-        acessorios:[]
-    }
-    loadProducts = () =>{
-        axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag=1').then(response => {
+export default function  Home() {
+
+    const [products,setProduct] = useState([]);
+    const [acessorios,setAcessorios] = useState([]);
+    const [pags,setpages] = useState(1);
+  
+    useEffect(() => {
+        loadProducts();
+        loadAcessorios();
+
+    })
+
+
+   
+   
+    
+
+
+    async function  loadProducts(){
+        await axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag='+pags).then(response => {
             console.log(response)
-            this.setState({ products:response.data })
+           setProduct(response.data);
         }, response =>{
-            console.log(response)
+            console.log(response);
         })
     }
-    loadAcessorios = () =>{
-        axios.get(api+'/selectproduct?op=totalporcat&namecat=acessorios&pag=1').then(response => {
+   
+    async function  loadAcessorios(){
+      await axios.get(api+'/selectproduct?op=totalporcat&namecat=acessorios&pag='+pags).then(response => {
             console.log(response)
-            this.setState({ acessorios:response.data })
+            setAcessorios(response.data);
         }, response =>{
-            console.log(response)
+            console.log(response);
         })
     }
-    componentDidMount(){
-        this.loadProducts()
-        this.loadAcessorios()
+
+    function setplus(){
+        setpages(pags+1);
     }
-    render(){
-        const { products, acessorios } = this.state;
+   
         return(
             <main className="default content">
                 <Container maxWidth={ false } className="">
@@ -60,7 +75,10 @@ export default class Home extends Component{
                                />
                             </Grid>
                         ))}
+
                        </div>
+                       < Button estilo="info" name="Ver Mais"/>
+                      
                     </Grid>
                     <Banner title="Acessórios" foto={ banner } link="/acessorios"/>
                     <Grid container spacing={1} className="grid">
@@ -79,9 +97,10 @@ export default class Home extends Component{
                             </Grid>
                         ))}
                         </div>
+                        < Button1 estilo="info" name="Ver Mais" />
                     </Grid>
                 </Container>
             </main>
         );
-    }
+    
 }

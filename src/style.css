@@ -57,6 +57,9 @@ body{
         flex-direction: column;
     }
 }
+.buttonvermais{
+   border: 1px solid black;
+}
 
 
  /* @media (max-width: 486px) {
