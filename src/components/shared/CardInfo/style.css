@@ -1,4 +1,5 @@
 .card-wd{
+   
     width: 250px;
     height: 500px;
     transition: all 1s;
@@ -46,12 +47,28 @@ img.icon{
     margin: 2px;
 }
 
+
 @media (max-width: 814px) {
-    /* .card-wd{
-        width: 200px !important;
-        height:  200px !important;
-        border:1px solid black;
-    } */
+    
+    .card-wd{
+        width: 40vw !important;
+        height:  300px !important;
+      
+     
+    }
+    .card-media{
+        background-size:70px  !important;
+        position: relative;
+        top:-80px;
+       
+        
+        
+    }
+    .cardcontent{
+        position: relative;
+        top:-150px;
+        
+    }
     
     .titulo{
         font-size: 11px !important;

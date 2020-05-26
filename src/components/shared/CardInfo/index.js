@@ -24,7 +24,7 @@ export default class CardInfo extends Component{
                         image={ this.props.imagem }
                         title={ this.props.titlehover }
                         />
-                        <CardContent>
+                        <CardContent className="cardcontent">
                         <Typography gutterBottom className="titulo">
                         { this.props.title }
                         </Typography>

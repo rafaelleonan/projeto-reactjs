@@ -18,6 +18,7 @@ export default class Header extends Component{
         if(window.innerWidth>748){
             const menuSection = document.querySelector("header");
             menuSection.classList.toggle("on",false);
+            document.body.style.overflow = "initial";
         }
         
         }
