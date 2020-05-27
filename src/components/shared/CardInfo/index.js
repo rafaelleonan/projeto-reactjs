@@ -15,13 +15,14 @@ export default class CardInfo extends Component{
         return(
             <div>
                 <Card className="card-wd">
+                <Link to={ this.props.linkButton2 } className="button">
                     <CardActionArea>
                         <CardMedia
                         className="card-media"
                         image={ this.props.imagem }
                         title={ this.props.titlehover }
                         />
-                        <CardContent>
+                        <CardContent className="cardcontent">
                         <Typography gutterBottom className="titulo">
                         { this.props.title }
                         </Typography>
@@ -33,7 +34,8 @@ export default class CardInfo extends Component{
                         </Typography>
                         </CardContent>
                     </CardActionArea>
-                    <CardActions>
+                    </Link>
+                    <CardActions className="cardaction">
                         <Link to={ this.props.linkButton2 } className="button">
                             <Button size="small" style={{ color:'#204ac8' }} className="button-card">
                                 <img src={ this.props.icon2 } alt={ this.props.altIcon2 } className="icon"/>

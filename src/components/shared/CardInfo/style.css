@@ -1,4 +1,5 @@
 .card-wd{
+   
     width: 250px;
     height: 500px;
     transition: all 1s;
@@ -10,7 +11,7 @@
     position: relative;
     max-height:100px;
 }
-a.button{
+.button{
     text-decoration: none;
     width: 100%;
     height: 100%;
@@ -46,12 +47,31 @@ img.icon{
     margin: 2px;
 }
 
+
 @media (max-width: 814px) {
-    /* .card-wd{
-        width: 200px !important;
-        height:  200px !important;
-        border:1px solid black;
+    
+    .card-wd{
+        width: 40vw !important;
+        height:  300px !important;
+      
+     
+    }
+    .card-media{
+        background-size:70px  !important;
+        position: relative;
+        top:-80px;
+        
+    }
+    /* .cardaction{
+        position:relative;
+        top:-150px;
+        font-size:12px !important;
     } */
+    .cardcontent{
+        position: relative;
+        top:-150px;
+        
+    }
     
     .titulo{
         font-size: 11px !important;

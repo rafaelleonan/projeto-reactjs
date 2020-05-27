@@ -46,6 +46,8 @@ body{
 
     .pptotal{
         grid-template-columns:1fr 1fr;
+        grid-gap:5px;
+        justify-content:center;
         
     }  
 
@@ -55,15 +57,18 @@ body{
         flex-direction: column;
     }
 }
+.buttonvermais{
+   border: 1px solid black;
+}
 
 
- @media (max-width: 486px) {
+ /* @media (max-width: 486px) {
 
     .pptotal{
         grid-template-columns:1fr ;
         
     }  
-}
+} */
     
    
 /* @media screen and (max-width: 360px) and (max-height: 640px){

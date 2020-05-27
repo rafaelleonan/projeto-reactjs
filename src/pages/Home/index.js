@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {useState,useEffect } from 'react';
 import './style.css';
 import '../../style.css';
 import Container from '@material-ui/core/Container';
@@ -11,58 +11,66 @@ import ver_mais from '../../static/icons/ver_mais.png';
 import api from '../../services/api';
 import axios from 'axios'
 import Grid from '@material-ui/core/Grid';
-import lupa from '../../static/icons/lupa.png';
+import Button from '../../components/shared/Botao';
+import Button1 from '../../components/shared/Botao';
+
+export default function  Home() {
+
+    const [products,setProduct] = useState([]);
+    const [acessorios,setAcessorios] = useState([]);
+    const [pags,setpages] = useState(1);
+  
+    useEffect(() => {
+        loadProducts();
+        loadAcessorios();
+
+    },[])
 
 
+  // useEffect(() => {
+  //       axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag='+pags).then(response => {
+  //           console.log(response)
+  //          setProduct([...products,...response.data]);
+  //       }, response =>{
+  //           console.log(response);
+  //       })
+  //   },[pags])
+   
+    
 
 
-export default class Home extends Component{
-    constructor(){
-        super()
-        this.state = {
-            products:[],
-            acessorios:[],
-            pesquisa:''
-        }
-    }
-    loadProducts = () =>{
-        axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag=1').then(response => {
-            this.setState({ products:response.data })
+    async function  loadProducts(){
+        await axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag='+pags).then(response => {
+            setProduct(response.data);
         }, response =>{
-            console.log(response)
         })
     }
-    loadAcessorios = () =>{
-        axios.get(api+'/selectproduct?op=totalporcat&namecat=acessorios&pag=1').then(response => {
-            this.setState({ acessorios:response.data })
+   
+    async function  loadAcessorios(){
+      await axios.get(api+'/selectproduct?op=totalporcat&namecat=acessorios&pag='+pags).then(response => {
+            setAcessorios(response.data);
         }, response =>{
-            console.log(response)
         })
     }
-    pesquisar = (e) =>{
-        e.preventDefault();
-        if(this.state.pesquisa){
-           alert(this.state.pesquisa)
-        }
 
+    function setplus(){
+       alert("a");
     }
-    componentDidMount(){
-        this.loadProducts()
-        this.loadAcessorios()
-    }
-    render(){
-        const { products, acessorios, pesquisa } = this.state;
+   
         return(
             <main className="default content">
                 <Container maxWidth={ false } className="">
-                    <div className="top-search">
+                    {/* <div className="top-search">
+                        <div className="fechar-pesquisa">
+                            
+                        </div>
                         <form onSubmit={ this.pesquisar }>
                             <div className="div-search">
                                 <input type="search" defaultValue={ pesquisa } onChange={ (e) => this.setState({ pesquisa: e.target.value }) } name="search" placeholder="Pesquise algo"/>
                                 <button type="submit"><img src={ lupa } alt="Lupa" id="lupa"/></button>
                             </div>
                         </form>
-                    </div>
+                    </div> */}
                     <Slide title="Slide aqui" text="Corpo do texto" slide={ slide } />
                     <Banner title="Celulares" foto={ banner } link="/celulares"/>
                     <Grid container spacing={1}   className="grid">
@@ -81,7 +89,10 @@ export default class Home extends Component{
                                />
                             </Grid>
                         ))}
+
                        </div>
+                       < Button estilo="info" name="Ver Mais"/>
+                      
                     </Grid>
                     <Banner title="Acessórios" foto={ banner } link="/acessorios"/>
                     <Grid container spacing={1} className="grid">
@@ -100,9 +111,10 @@ export default class Home extends Component{
                             </Grid>
                         ))}
                         </div>
+                        < Button1 estilo="info" name="Ver Mais" onClick={()=>setplus()}/>
                     </Grid>
                 </Container>
             </main>
         );
-    }
+    
 }
