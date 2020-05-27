@@ -27,7 +27,14 @@ export default function  Home() {
     })
 
 
-   
+  // useEffect(() => {
+  //       axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag='+pags).then(response => {
+  //           console.log(response)
+  //          setProduct([...products,...response.data]);
+  //       }, response =>{
+  //           console.log(response);
+  //       })
+  //   },[pags])
    
     
 
@@ -51,7 +58,7 @@ export default function  Home() {
     }
 
     function setplus(){
-        setpages(pags+1);
+       alert("a");
     }
    
         return(
@@ -97,7 +104,7 @@ export default function  Home() {
                             </Grid>
                         ))}
                         </div>
-                        < Button1 estilo="info" name="Ver Mais" />
+                        < Button1 estilo="info" name="Ver Mais" onClick={()=>setplus()}/>
                     </Grid>
                 </Container>
             </main>
