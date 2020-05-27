@@ -15,12 +15,17 @@ button.padrao:hover{
     background: #204ac8;
 }
 button.info{
+    position: relative;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 30px;
     border:1px solid #0086bb;
     padding:10px;
     border-radius: 10px;
     cursor: pointer;
     color: #0086bb;
     background: #fff;
+    width:300px;
 }
 button.info:hover{
     border:1px solid #fff;

@@ -4,25 +4,33 @@ import './style.css';
 
 export default class Botao extends Component{
     componentDidMount(){
-        let btn = document.querySelector('#button');
+        var btn = document.querySelectorAll('.button');
         switch(this.props.estilo){
             case 'info':
-                btn.classList.add("info");
+                for(var i=0;i<btn.length;i++){
+                    btn[i].classList.add("info");
+                }
                 break;
             case 'dark':
-                btn.classList.add("dark");
+                for(var i=0;i<btn.length;i++){
+                btn[i].classList.add("dark");
+                }
                 break;
             case 'danger':
-                btn.classList.add("danger");
+                for(var i=0;i<btn.length;i++){
+                btn[i].classList.add("danger");
+                }
                 break;
             default:
-                btn.classList.add("padrao");
+                for(var i=0;i<btn.length;i++){
+                btn[i].classList.add("padrao");
+                }
                 break;
         }
     }
     render(){
         return(
-            <button type={ this.props.tipo } id="button" estilo={ this.props.estilo }>
+            <button type={this.props.tipo} className="button" estilo={this.props.estilo} >
                 { this.props.name }
             </button>
         );
