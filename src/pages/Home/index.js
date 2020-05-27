@@ -11,14 +11,14 @@ import ver_mais from '../../static/icons/ver_mais.png';
 import api from '../../services/api';
 import axios from 'axios'
 import Grid from '@material-ui/core/Grid';
-import Button from '../../components/shared/Botao';
-import Button1 from '../../components/shared/Botao';
+
 
 export default function  Home() {
 
     const [products,setProduct] = useState([]);
     const [acessorios,setAcessorios] = useState([]);
-    const [pags,setpages] = useState(1);
+    const [pagscel,setpagescel] = useState(1);
+    const [pagsacess,setpagesacess] = useState(1);
   
     useEffect(() => {
         loadProducts();
@@ -27,56 +27,62 @@ export default function  Home() {
     },[])
 
 
-  // useEffect(() => {
-  //       axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag='+pags).then(response => {
-  //           console.log(response)
-  //          setProduct([...products,...response.data]);
-  //       }, response =>{
-  //           console.log(response);
-  //       })
-  //   },[pags])
+  useEffect(() => {
+
+    loadProducts();
+     
+    },[pagscel])
+
+    useEffect(() => {
+
+        loadAcessorios();
+         
+  },[pagsacess])
    
     
 
 
     async function  loadProducts(){
-        await axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag='+pags).then(response => {
-            setProduct(response.data);
+        await axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag='+pagscel).then(response => {
+                    if(response.data.length===0){
+                       return;
+                    }else{
+                setProduct([...products,...response.data]);
+                    }
+           
         }, response =>{
+            console.log(response);
         })
     }
    
     async function  loadAcessorios(){
-      await axios.get(api+'/selectproduct?op=totalporcat&namecat=acessorios&pag='+pags).then(response => {
-            setAcessorios(response.data);
+      await axios.get(api+'/selectproduct?op=totalporcat&namecat=acessorios&pag='+pagsacess).then(response => {
+        if(response.data.length===0){
+            return;
+         }else{
+            setAcessorios([...acessorios,...response.data]);
+         }
         }, response =>{
+            console.log(response);
         })
     }
 
-    function setplus(){
-       alert("a");
+    function setpluscel(){
+        setpagescel(pagscel+1);
+    }
+    function setplusaacess(){
+        setpagesacess(pagsacess+1);
     }
    
         return(
             <main className="default content">
                 <Container maxWidth={ false } className="">
-                    {/* <div className="top-search">
-                        <div className="fechar-pesquisa">
-                            
-                        </div>
-                        <form onSubmit={ this.pesquisar }>
-                            <div className="div-search">
-                                <input type="search" defaultValue={ pesquisa } onChange={ (e) => this.setState({ pesquisa: e.target.value }) } name="search" placeholder="Pesquise algo"/>
-                                <button type="submit"><img src={ lupa } alt="Lupa" id="lupa"/></button>
-                            </div>
-                        </form>
-                    </div> */}
                     <Slide title="Slide aqui" text="Corpo do texto" slide={ slide } />
                     <Banner title="Celulares" foto={ banner } link="/celulares"/>
                     <Grid container spacing={1}   className="grid">
                        <div className="pptotal">
                         {products.map(product =>(
-                            <Grid item xs={3} key={ product.id } className="griditem">  
+                            <Grid item xs={3} className="griditem">  
                                 <CardInfo 
                                 imagem={ product.url } 
                                 titleHover={ product.nameproduct }
@@ -91,14 +97,18 @@ export default function  Home() {
                         ))}
 
                        </div>
-                       < Button estilo="info" name="Ver Mais"/>
+                       <button className="info"  onClick={()=>{
+                           setpluscel();
+                       }}>
+                         Ver Mais
+                        </button>
                       
                     </Grid>
                     <Banner title="Acessórios" foto={ banner } link="/acessorios"/>
                     <Grid container spacing={1} className="grid">
                     <div className="pptotal">
                         {acessorios.map(acessorio =>(
-                            <Grid item xs={3} key={ acessorio.id } className="griditem">
+                            <Grid item xs={3} className="griditem">
                                 <CardInfo 
                                 imagem={ acessorio.url } 
                                 titleHover={ acessorio.nameproduct }
@@ -111,7 +121,11 @@ export default function  Home() {
                             </Grid>
                         ))}
                         </div>
-                        < Button1 estilo="info" name="Ver Mais" onClick={()=>setplus()}/>
+                        <button className="info" onClick={()=>{
+                           setplusaacess();
+                       }}>
+                         Ver Mais
+                        </button>
                     </Grid>
                 </Container>
             </main>
