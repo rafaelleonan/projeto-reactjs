@@ -9,6 +9,8 @@ import CardInfo from '../../components/shared/CardInfo';
 import banner from '../../static/imagens/banner.jpg'
 import ver_mais from '../../static/icons/ver_mais.png';
 import api from '../../services/api';
+import lupa from '../../static/icons/lupa.png'
+import fecharPesquisa from '../../static/icons/fechar-pesquisa.png'
 import axios from 'axios'
 import Grid from '@material-ui/core/Grid';
 import Button from '../../components/shared/Botao';
@@ -18,7 +20,9 @@ export default function  Home() {
 
     const [products,setProduct] = useState([]);
     const [acessorios,setAcessorios] = useState([]);
+    const [pesquisado, setPesquisados] = useState([]);
     const [pags,setpages] = useState(1);
+    const [pesquisa, setPesquisa] = useState('');
   
     useEffect(() => {
         loadProducts();
@@ -53,6 +57,38 @@ export default function  Home() {
         })
     }
 
+    async function pesquisar(event){
+        event.preventDefault();
+        if(pesquisa != ''){
+            await axios.post(api+`/searchproducts?pag=${pags}`,{"nameproduct":pesquisa}).then(response => {
+                setPesquisados(response.data)
+                if(response.data[0]){
+                    let pesq = document.querySelector('.resultado-pesquisa')
+                    pesq.style.display = 'block'
+                }
+            }, response =>{
+            })
+        }else{
+            return
+        }
+    }
+    function fechar_pesquisa(){
+        let btn = document.querySelector('#abrir-pesquisa');
+        let btn2 = document.querySelector('#fechar-pesquisa');
+        let pes = document.querySelector('.top-search');
+        pes.style.display = 'none'
+        btn2.style.display = 'none'  
+        btn.style.display = 'block'
+    }
+    function abrir_pesquisa(){
+        let btn = document.querySelector('#abrir-pesquisa');
+        let btn2 = document.querySelector('#fechar-pesquisa');
+        let pes = document.querySelector('.top-search');
+        pes.style.display = 'block' 
+        btn.style.display = 'none'  
+        btn2.style.display = 'block' 
+    }
+
     function setplus(){
        alert("a");
     }
@@ -60,17 +96,42 @@ export default function  Home() {
         return(
             <main className="default content">
                 <Container maxWidth={ false } className="">
-                    {/* <div className="top-search">
-                        <div className="fechar-pesquisa">
-                            
-                        </div>
-                        <form onSubmit={ this.pesquisar }>
+                    <div className="top-search">
+                        <form onSubmit={ pesquisar }>
                             <div className="div-search">
-                                <input type="search" defaultValue={ pesquisa } onChange={ (e) => this.setState({ pesquisa: e.target.value }) } name="search" placeholder="Pesquise algo"/>
+                                <input type="search" defaultValue={ pesquisa } onChange={ (e) => setPesquisa(e.target.value) } name="search" placeholder="Pesquise algo"/>
                                 <button type="submit"><img src={ lupa } alt="Lupa" id="lupa"/></button>
                             </div>
                         </form>
-                    </div> */}
+                        <div className="fechar-pesquisa">
+                            <img src={ fecharPesquisa } alt="Fechar barra de pesquisa" id="fechar-pesquisa" onClick={ fechar_pesquisa }/>
+                        </div>
+                    </div>
+                    <div className="abrir-pesquisa">
+                        <img src={ lupa } alt="Abrir barra de pesquisa" id="abrir-pesquisa" onClick={ abrir_pesquisa }/>
+                    </div>
+                    <div className="resultado-pesquisa">
+                        <h1>Resultados da pesquisa</h1>
+                    <Grid container spacing={1}   className="grid">
+                       <div className="pptotal">
+                        {pesquisado.map(pesquisa =>(
+                            <Grid item xs={3} key={ pesquisa.id } className="griditem">  
+                                <CardInfo 
+                                imagem={ pesquisa.url } 
+                                titleHover={ pesquisa.nameproduct }
+                                title={ pesquisa.nameproduct } 
+                                subtitle={ pesquisa.value }
+                                id={ pesquisa.id }
+                                text={ pesquisa.description }
+                                linkButton2={`/produto/${pesquisa.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
+                               
+                               />
+                            </Grid>
+                        ))}
+                       </div>
+                       < Button estilo="info" name="Ver Mais"/>
+                    </Grid>
+                    </div>
                     <Slide title="Slide aqui" text="Corpo do texto" slide={ slide } />
                     <Banner title="Celulares" foto={ banner } link="/celulares"/>
                     <Grid container spacing={1}   className="grid">
@@ -89,11 +150,10 @@ export default function  Home() {
                                />
                             </Grid>
                         ))}
-
                        </div>
                        < Button estilo="info" name="Ver Mais"/>
-                      
                     </Grid>
+
                     <Banner title="Acessórios" foto={ banner } link="/acessorios"/>
                     <Grid container spacing={1} className="grid">
                     <div className="pptotal">

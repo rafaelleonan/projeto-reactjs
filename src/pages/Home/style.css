@@ -12,7 +12,7 @@ div.div-search{
     position: relative;
     height: 40px;
     /* display: none; */
-   
+    display: flex;
     background-color: white;
     border-radius: 5px;
     border: 1px solid #ddd;
@@ -20,7 +20,7 @@ div.div-search{
 div.div-search input[type="search"]{
     position: relative;
     height: 100%;
-    width: 350px;
+    width: 96%;
     border-radius: 5px;
     border:none;
     background-color: white;
@@ -31,7 +31,7 @@ div.div-search button{
     display: flex;
     align-items: center;
     justify-items: center;
-    height: 100%;
+    flex-grow: 1;
     border-left:1px solid #ddd;
     border-right:none;
     border-top:none;
@@ -50,11 +50,40 @@ div.div-search button:hover{
 div.top-search{
     position: relative;
     margin-top: 10px;
+    display: none;
     width: 100%;
 }
 div.fechar-pesquisa{
     position: relative;
     width: 100%;
-    height: 2px;
-    background-color: black;
+    display: block;
+}
+div.fechar-pesquisa img#fechar-pesquisa{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    float:right;
+    cursor: pointer;
+    display: block;
+}
+div.abrir-pesquisa{
+    position: relative;
+    margin-top: 11px;
+    width: 100%;
+    display: block;
+}
+img#abrir-pesquisa{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    float:right;
+    cursor: pointer;
+    display: block;
+}
+div.resultado-pesquisa{
+    position: relative;
+    width: 100%;
+    margin-top: 60px;
+    display: none;
 }
