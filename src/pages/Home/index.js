@@ -11,15 +11,22 @@ import ver_mais from '../../static/icons/ver_mais.png';
 import api from '../../services/api';
 import axios from 'axios'
 import Grid from '@material-ui/core/Grid';
+import lupa from '../../static/icons/lupa.png';
+
+
+
 
 export default class Home extends Component{
-    state = {
-        products:[],
-        acessorios:[]
+    constructor(){
+        super()
+        this.state = {
+            products:[],
+            acessorios:[],
+            pesquisa:''
+        }
     }
     loadProducts = () =>{
         axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag=1').then(response => {
-            console.log(response)
             this.setState({ products:response.data })
         }, response =>{
             console.log(response)
@@ -27,27 +34,44 @@ export default class Home extends Component{
     }
     loadAcessorios = () =>{
         axios.get(api+'/selectproduct?op=totalporcat&namecat=acessorios&pag=1').then(response => {
-            console.log(response)
             this.setState({ acessorios:response.data })
         }, response =>{
             console.log(response)
         })
+    }
+    pesquisar = (e) =>{
+        e.preventDefault();
+        if(this.state.pesquisa){
+           alert(this.state.pesquisa)
+        }
+
     }
     componentDidMount(){
         this.loadProducts()
         this.loadAcessorios()
     }
     render(){
-        const { products, acessorios } = this.state;
+        const { products, acessorios, pesquisa } = this.state;
         return(
             <main className="default content">
                 <Container maxWidth={ false } className="">
+                    <div className="top-search">
+                        <div className="fechar-pesquisa">
+                            
+                        </div>
+                        <form onSubmit={ this.pesquisar }>
+                            <div className="div-search">
+                                <input type="search" defaultValue={ pesquisa } onChange={ (e) => this.setState({ pesquisa: e.target.value }) } name="search" placeholder="Pesquise algo"/>
+                                <button type="submit"><img src={ lupa } alt="Lupa" id="lupa"/></button>
+                            </div>
+                        </form>
+                    </div>
                     <Slide title="Slide aqui" text="Corpo do texto" slide={ slide } />
                     <Banner title="Celulares" foto={ banner } link="/celulares"/>
                     <Grid container spacing={1}   className="grid">
                        <div className="pptotal">
                         {products.map(product =>(
-                            <Grid item xs={3} className="griditem">  
+                            <Grid item xs={3} key={ product.id } className="griditem">  
                                 <CardInfo 
                                 imagem={ product.url } 
                                 titleHover={ product.nameproduct }
@@ -66,7 +90,7 @@ export default class Home extends Component{
                     <Grid container spacing={1} className="grid">
                     <div className="pptotal">
                         {acessorios.map(acessorio =>(
-                            <Grid item xs={3} className="griditem">
+                            <Grid item xs={3} key={ acessorio.id } className="griditem">
                                 <CardInfo 
                                 imagem={ acessorio.url } 
                                 titleHover={ acessorio.nameproduct }

@@ -27,45 +27,6 @@ a.a-logo{
     width: 80px;
     height: 80px;
 }
-div.div-search{
-    position: relative;
-    height: 40px;
-    /* display: none; */
-   
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-div.div-search input[type="search"]{
-    position: relative;
-    height: 100%;
-    width: 350px;
-    border-radius: 5px;
-    border:none;
-    background-color: white;
-    padding:5px;
-}
-div.div-search button{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    height: 100%;
-    border-left:1px solid #ddd;
-    border-right:none;
-    border-top:none;
-    border-bottom:none;
-    border-radius: 5px;
-    background: transparent;
-    cursor: pointer;
-    float: right;
-    padding:4px;
-    opacity: 0.5;
-}
-div.div-search button:hover{
-    position: relative;
-    opacity: 2;
-}
 div.div-list{
     position: relative;
     margin-left: 50px;
