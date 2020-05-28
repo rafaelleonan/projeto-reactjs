@@ -8,10 +8,10 @@ main.content{
     padding-right: 10px;
     display: flex;
 }
+/* ================ CSS DA PESQUISA ===========*/
 div.div-search{
     position: relative;
     height: 40px;
-    /* display: none; */
     display: flex;
     background-color: white;
     border-radius: 5px;

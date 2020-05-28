@@ -73,12 +73,14 @@ export default function  Home() {
         }
     }
     function fechar_pesquisa(){
+        let boxResultados = document.querySelector('.resultado-pesquisa');
         let btn = document.querySelector('#abrir-pesquisa');
         let btn2 = document.querySelector('#fechar-pesquisa');
         let pes = document.querySelector('.top-search');
         pes.style.display = 'none'
         btn2.style.display = 'none'  
         btn.style.display = 'block'
+        boxResultados.style.display = 'none'
     }
     function abrir_pesquisa(){
         let btn = document.querySelector('#abrir-pesquisa');
@@ -112,9 +114,9 @@ export default function  Home() {
                     </div>
                     <div className="resultado-pesquisa">
                         <h1>Resultados da pesquisa</h1>
-                    <Grid container spacing={1}   className="grid">
-                       <div className="pptotal">
-                        {pesquisado.map(pesquisa =>(
+                            <Grid container spacing={1}   className="grid">
+                            <div className="pptotal">
+                            {pesquisado.map(pesquisa =>(
                             <Grid item xs={3} key={ pesquisa.id } className="griditem">  
                                 <CardInfo 
                                 imagem={ pesquisa.url } 
@@ -127,9 +129,8 @@ export default function  Home() {
                                
                                />
                             </Grid>
-                        ))}
-                       </div>
-                       < Button estilo="info" name="Ver Mais"/>
+                            ))}
+                            </div>
                     </Grid>
                     </div>
                     <Slide title="Slide aqui" text="Corpo do texto" slide={ slide } />
