@@ -8,8 +8,9 @@ export default class Slide extends Component {
         <div className="slide">
             <img src={ this.props.slide } alt="Slide"/>
             <div className="conteudo-slide">
-                <h1>{ this.props.title }</h1>
-                <p>
+                <h3 className="afas">{ this.props.title }</h3>
+                <p className="afas"> 
+                    
                     { this.props.text }
                 </p>
             </div>

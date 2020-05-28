@@ -4,7 +4,7 @@ import '../../style.css';
 import Container from '@material-ui/core/Container';
 import Banner from '../../components/shared/Banner';
 import Slide from '../../components/shared/Slide';
-import slide from '../../static/imagens/slide2.jpg'
+import slide from '../../static/imagens/celularshow.jpg'
 import CardInfo from '../../components/shared/CardInfo';
 import banner from '../../static/imagens/banner.jpg'
 import ver_mais from '../../static/icons/ver_mais.png';
@@ -78,7 +78,7 @@ export default function  Home() {
         return(
             <main className="default content">
                 <Container maxWidth={ false } className="">
-                    <Slide title="Slide aqui" text="Corpo do texto" slide={ slide } />
+                    <Slide title="Procurando algo?" text="Seja Bem-vindo e aproveite as nossas ofertas !" slide={ slide } />
                     <Banner title="Celulares" foto={ banner } link="/celulares"/>
                     <Grid container spacing={1}   className="grid">
                        <div className="pptotal">
