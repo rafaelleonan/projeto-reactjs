@@ -28,8 +28,9 @@ div.conteudo-slide{
 }
 
 
-/* @media (max-width: 420px) {
-    div.slide{
-width: 140%;
+@media (max-width: 420px) {
+    div.conteudo-slide{
+top:175px;
+
     }
-} */
+}
