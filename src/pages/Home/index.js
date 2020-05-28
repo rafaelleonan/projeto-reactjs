@@ -68,6 +68,7 @@ export default function  Home() {
     }
 
     function setpluscel(){
+        
         setpagescel(pagscel+1);
     }
     function setplusaacess(){

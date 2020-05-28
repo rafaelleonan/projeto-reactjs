@@ -139,6 +139,9 @@ export default class Acessorios extends Component{
                             </Grid>
                         ))}
                        </div>
+                       <button className="info" >
+                         Ver Mais
+                        </button>
                     </Grid>
                     </div>
                 </Container>
