@@ -34,8 +34,8 @@ const Footer = () =>(
         </div> */}
         <div className="copyright">
             <ul>
-               <li>Copyright © 2020. </li> 
-               <li> Nome da empresa.</li> 
+               <li>Copyright © 2020 </li> 
+               <li> CellShop </li>
                <li> Todos os direitos reservados.</li> 
             </ul>
           

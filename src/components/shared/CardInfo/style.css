@@ -19,6 +19,7 @@
 .titulo{
     font-size: 8px;
     height: 50px;
+    color:#1f1f1f;
     overflow: hidden;
 }
 .subtitulo{
@@ -34,8 +35,8 @@
     font-size: 12px !important;
     overflow: hidden;
 }
-.button-card{
-    color:#204ac8;
+.button-card{ 
+    color:#1f1f1f;
     display:flex;
     vertical-align: middle;
     width: 100%;

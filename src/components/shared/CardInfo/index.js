@@ -37,7 +37,7 @@ export default class CardInfo extends Component{
                     </Link>
                     <CardActions className="cardaction">
                         <Link to={ this.props.linkButton2 } className="button">
-                            <Button size="small" style={{ color:'#204ac8' }} className="button-card">
+                            <Button size="small" style={{ color:'#1f1f1f' }} className="button-card">
                                 <img src={ this.props.icon2 } alt={ this.props.altIcon2 } className="icon"/>
                                 { this.props.nameButton2 }
                             </Button>

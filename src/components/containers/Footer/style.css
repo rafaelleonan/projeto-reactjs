@@ -37,7 +37,7 @@ ul.list-footer li{
 }
 ul.list-footer li a{
     padding: 5px;
-    color:#204ac8;
+    color:#1f1f1f;
     text-decoration: none;
 }
 ul.list-footer li a:hover{
@@ -81,14 +81,17 @@ div.copyright{
     display: flex;
     align-items: center;
     justify-content: center;
-    color:white;
-    background-color: #204ac8;
+    color:#edebaf;
+    background-color: #1f1f1f;
 }
 div.copyright ul{
     display:flex;
     list-style: none;
     text-align: center;
     transition: linear 2s;
+}
+div.copyright ul li{
+    padding: 5px;
 }
 @media (max-width: 800px) {
     div.copyright ul{

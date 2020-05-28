@@ -6,7 +6,7 @@ header.header{
     top:0px;
     height: 80px;
     z-index: 1;
-    background:	#204ac8;
+    background:	#1f1f1f;
     width:100vw;
     font-weight: bold;
     display: flex;
@@ -15,16 +15,15 @@ header.header{
 }
 img.logo{
     position: relative;
-    width: 80px;
+    width: 250px;
     height: 80px;
     margin-right: auto;
     /* display: none; */
 }
 a.a-logo{
-  
     position: relative;
     display: contents;
-    width: 80px;
+    width: 250px;
     height: 80px;
 }
 div.div-list{
@@ -45,10 +44,10 @@ div.div-list ul.list-options li{
     border-radius: 5px;
     margin:2px;
     margin-left: auto;
-    border-bottom:2px solid #204ac8;
+    border-bottom:2px solid #1f1f1f;
 }
 div.div-list ul.list-options li a{
-    color:white;
+    color:#edebaf;
     text-decoration: none;
 }
 div.div-list ul.list-options li:hover{
@@ -59,7 +58,7 @@ div.div-list ul.list-options li:hover{
     border-radius: 5px;
     margin:2px;
     margin-left: auto;
-    border-bottom:2px solid #fff;
+    border-bottom:2px solid #edebaf;
 }
 
 
@@ -74,7 +73,7 @@ div.div-list ul.list-options li:hover{
  
 } 
 .one,.two,.three{
-    background-color: #fff;
+    background-color: #edebaf;
     height:5px;
     width:100%;
     margin:6px auto;
