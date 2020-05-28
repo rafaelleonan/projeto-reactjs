@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState,useEffect } from 'react';
 import './style.css';
 import '../../style.css';
 import Container from '@material-ui/core/Container';
@@ -15,82 +15,153 @@ import fecharPesquisa from '../../static/icons/fechar-pesquisa.png'
 
 
 
-export default class Acessorios extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            acessorios:[],
-            ordemAlfa:[{ value:'Normal', opcao:'Normal' },{ value:'CRESC', opcao:'Crescente' }, { value:'DESC', opcao:'Decrescente' }],
-            ordemPreco:[{ value:'Todos', opcao:'Todos' },{ value:'1-50', opcao:'Até R$ 50' } , { value:'101-150', opcao:'R$ 101 - R$ 150' }, { value:'151-200', opcao:'R$ 151 - R$ 200' }, { value:'200-250', opcao:'R$ 200 - R$ 250' }],
-            ordemMarca:[{ value:'Todas', opcao:'Todas' },{ value:'Apple', opcao:'Apple' }, { value:'LG', opcao:'LG' } , { value:'Motorola', opcao:'Motorola' } , { value:'Samsung', opcao:'Samsung' } , { value: 'Xiaomi', opcao: 'Xiaomi' }],
-            ordem:'Normal',
-            preco:'Todos',
-            marca:'Todas',
-            pesquisa:'',
-            pesquisado:[],
-            pags:1
-        }
-        this.handleChangeOrdem = this.handleChangeOrdem.bind(this);
-        this.handleChangePreco = this.handleChangePreco.bind(this);
-        this.handleChangeMarca = this.handleChangeMarca.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+export default function Acessorios() {
+
+    const [acessorios,setAcessorios] = useState([]);
+    const [ordemAlfa,setOrdemAlfa] = useState([{ value:'Normal', opcao:'Normal' },{ value:'ASC', opcao:'Crescente' }, { value:'DESC', opcao:'Decrescente' }]);
+    const [ordemPreco,setOrdemPreco] = useState([{ value:'Todos', opcao:'Todos' },{ value:'1-50', opcao:'Até R$ 50' } , { value:'101-150', opcao:'R$ 101 - R$ 150' }, { value:'151-200', opcao:'R$ 151 - R$ 200' }, { value:'200-250', opcao:'R$ 200 - R$ 250' }]);
+    const [ordemMarca,setordemMarca] = useState([{ value:'Todas', opcao:'Todas' },{ value:'Apple', opcao:'Apple' }, { value:'LG', opcao:'LG' } , { value:'Motorola', opcao:'Motorola' } , { value:'Samsung', opcao:'Samsung' } , { value: 'Xiaomi', opcao: 'Xiaomi' }]);
+    const [ordem,setOrdem] = useState("Normal");
+    const [preco,setPreco] = useState("Todos");
+    const [marca,setMarca] = useState("Todas");
+    const[pags,setPags] = useState(1);
+    const [pesquisado, setPesquisados] = useState([]);
+    const [pesquisa, setPesquisa] = useState('');
+    const[pagsfiltro,setPagsfiltro] = useState(1);
+    const[pagslimit,setpagslimit] = useState(false);
+    const[porfiltroboolean,setPorfiltroboolean] = useState(false);
+
+       
+    useEffect(() => {
+
+        loadAcessorios();
+            
+      },[])
+      useEffect(() => {  ///quando houver alteraco em pags dispara useEffect
+            
+        loadAcessorios();
+    
+        },[pags])
+
+        useEffect(() => {  
+            if((pagsfiltro!==1) & (porfiltroboolean==true)){
+                handleSubmit1();
+            }
+
+      },[pagsfiltro]);
+
+    
+
+    function handleChangeOrdem(value) {
+      
+        setOrdem(value);
     }
-    handleChangeOrdem(event) {
-        this.setState({ordem: event.target.value});
+    function handleChangePreco(value){
+     
+        setPreco(value);
     }
-    handleChangePreco(event) {
-        this.setState({preco: event.target.value});
+    function handleChangeMarca(value) {
+      
+        setMarca(value);
     }
-    handleChangeMarca(event) {
-        this.setState({marca: event.target.value});
-    }
-    handleSubmit(event) {
+
+    function setPlusPag(){
+        console.log(pags);
+
+     if(pagslimit==true){  //para nao retornar mais registros
+        return;
+     }else if(porfiltroboolean==false){
+        setPags((pags+1));
+     }else if(porfiltroboolean==true){
+
+         setPagsfiltro(pagsfiltro+1);
+     }
+         
+  }
+
+    async function handleSubmit1(){
         let filter = '?op=totalporcat&namecat=acessorios'
-        if(this.state.ordem != 'Normal'){
-            filter += `&order=${this.state.ordem}`
+        if(ordem != 'Normal'){
+            filter += `&order=${ordem}`
         }
-        if(this.state.preco != 'Todos'){
-            let preco = this.state.preco.split('-')
-            let value1 = preco[0]
-            let value2 = preco[1]
+        if(preco != 'Todos'){
+            let prec = preco.split('-')
+            let value1 = prec[0]
+            let value2 = prec[1]
             filter += `&value1=${value1}&value2=${value2}`
         }
-        if(this.state.marca != 'Todas'){
-            filter += `&brand=${this.state.marca}`
+        if(marca != 'Todas'){
+            filter += `&brand=${marca}`
         }
-        axios.get(api+`/selectproduct${filter}&pag=1`).then(response => {
-            this.setState({ acessorios:response.data })
+        await axios.get(api+`/selectproduct${filter}&pag=${pagsfiltro}`).then(response => {
+           
+            setAcessorios([...acessorios,...response.data]);
+
         }, response =>{
             console.log(response)
         })
+      }
+
+    async function handleSubmit(event) {
         event.preventDefault();
-    }
-    loadAcessorios = () =>{
+        setpagslimit(false);
+        setPagsfiltro(1);
+       
         let filter = '?op=totalporcat&namecat=acessorios'
-        if(this.state.ordem != 'Normal'){
-            filter += `&order=${this.state.ordem}`
+        if(ordem != 'Normal'){
+            filter += `&order=${ordem}`
         }
-        if(this.state.preco != 'Todos'){
-            let preco = this.state.preco.split('-')
-            let value1 = preco[0]
-            let value2 = preco[1]
+        if(preco != 'Todos'){
+            let prec = preco.split('-')
+            let value1 = prec[0]
+            let value2 = prec[1]
             filter += `&value1=${value1}&value2=${value2}`
         }
-        if(this.state.marca != 'Todas'){
-            filter += `&brand=${this.state.marca}`
+        if(marca != 'Todas'){
+            filter += `&brand=${marca}`
         }
-        axios.get(api+`/selectproduct${filter}&pag=1`).then(response => {
-            this.setState({ acessorios:response.data })
+        await axios.get(api+`/selectproduct${filter}&pag=1`).then(response => {
+            setAcessorios(response.data);
+
+        }, response =>{
+            console.log(response)
+        })
+       setPorfiltroboolean(true);  //agora a pesquisa esta sendo por filtro
+      }
+    
+    
+      async function loadAcessorios() {
+        let filter = '?op=totalporcat&namecat=acessorios'
+        if(ordem != 'Normal'){
+            filter += `&order=${ordem}`
+        }
+        if(preco != 'Todos'){
+            let prec = preco.split('-')
+            let value1 = prec[0]
+            let value2 = prec[1]
+            filter += `&value1=${value1}&value2=${value2}`
+        }
+        if(marca != 'Todas'){
+            filter += `&brand=${marca}`
+        }
+        await axios.get(api+`/selectproduct${filter}&pag=${pags}`).then(response => {
+
+            if(response.data.length==0){
+                setpagslimit(true);
+                return;
+            }else{
+                setAcessorios([...acessorios,...response.data]);
+            }
+         
         }, response =>{
             console.log(response)
         })
     }
-    pesquisar = (event) =>{
+    async function pesquisar(event){
         event.preventDefault();
-        if(this.state.pesquisa != ''){
-            axios.post(api+`/searchproducts?pag=${this.state.pags}&cat=acessorios`,{"nameproduct":this.state.pesquisa}).then(response => {
-                console.log(response.data)
-                this.setState({ pesquisado:response.data })
+        if(pesquisa != ''){
+            await axios.post(api+`/searchproducts?pag=${pags}&cat=acessorios`,{"nameproduct":pesquisa}).then(response => {
+                setPesquisados(response.data)
                 if(response.data[0]){
                     let pesq = document.querySelector('.resultado-pesquisa')
                     pesq.style.display = 'block'
@@ -101,7 +172,7 @@ export default class Acessorios extends Component{
             return
         }
     }
-    fechar_pesquisa = () => {
+    function fechar_pesquisa(){
         let boxResultados = document.querySelector('.resultado-pesquisa');
         let btn = document.querySelector('#abrir-pesquisa');
         let btn2 = document.querySelector('#fechar-pesquisa');
@@ -111,7 +182,7 @@ export default class Acessorios extends Component{
         btn.style.display = 'block'
         boxResultados.style.display = 'none'
     }
-    abrir_pesquisa = () => {
+    function abrir_pesquisa(){
         let btn = document.querySelector('#abrir-pesquisa');
         let btn2 = document.querySelector('#fechar-pesquisa');
         let pes = document.querySelector('.top-search');
@@ -119,27 +190,24 @@ export default class Acessorios extends Component{
         btn.style.display = 'none'  
         btn2.style.display = 'block' 
     }
-    componentDidMount(){
-        this.loadAcessorios()
-    }
-    render(){
-        const { acessorios, ordemAlfa, ordemPreco, ordemMarca, ordem, preco, marca, pesquisa, pesquisado } = this.state;
+   
+    
         return(
             <main className="default content">
                 <Container maxWidth={ false }>
                 <div className="top-search">
-                        <form onSubmit={ this.pesquisar }>
+                        <form onSubmit={ pesquisar }>
                             <div className="div-search">
-                                <input type="search" defaultValue={ pesquisa } onChange={ (e) => this.setState({ pesquisa:e.target.value }) } name="search" placeholder="Pesquise algo" id="pes"/>
+                                <input type="search" defaultValue={ pesquisa } onChange={ (e) => setPesquisa(e.target.value) } name="search" placeholder="Pesquise algo" id="pes"/>
                                 <button type="submit"><img src={ lupa } alt="Lupa" id="lupa"/></button>
                             </div>
                         </form>
                         <div className="fechar-pesquisa">
-                            <img src={ fecharPesquisa } alt="Fechar barra de pesquisa" id="fechar-pesquisa" onClick={ this.fechar_pesquisa }/>
+                            <img src={ fecharPesquisa } alt="Fechar barra de pesquisa" id="fechar-pesquisa" onClick={ fechar_pesquisa }/>
                         </div>
                     </div>
                     <div className="abrir-pesquisa">
-                        <img src={ lupa } alt="Abrir barra de pesquisa" id="abrir-pesquisa" onClick={ this.abrir_pesquisa }/>
+                        <img src={ lupa } alt="Abrir barra de pesquisa" id="abrir-pesquisa" onClick={ abrir_pesquisa }/>
                     </div>
                     <div className="resultado-pesquisa">
                         <h1>Resultados da pesquisa</h1>
@@ -165,11 +233,11 @@ export default class Acessorios extends Component{
                     <Banner title="Acessórios" foto={ acessoriosBanner } link="#"/>
                     <fieldset className="config">
                         <legend>Ordenar por</legend>
-                        <form onSubmit={this.handleSubmit}>
+                        <form onSubmit={e=>{handleSubmit(e)}}>
                         <div className="filtro">
                             <div className="div-select">
                                 <label htmlFor="alfa">Ordem alfabética:</label>
-                                <select id="alfa" value={ordem} onChange={this.handleChangeOrdem} className="select">
+                                <select id="alfa" value={ordem} onChange={e=>{handleChangeOrdem(e.target.value)}} className="select">
                                     { ordemAlfa.map( ordem =>(
                                         <option key={ordem.value} value={ ordem.value }>{ ordem.opcao }</option>
                                     )) }
@@ -177,7 +245,7 @@ export default class Acessorios extends Component{
                             </div>
                             <div className="div-select">
                                 <label htmlFor="preco">Preço:</label>
-                                <select id="preco" value={preco} onChange={this.handleChangePreco} className="select">
+                                <select id="preco" value={preco} onChange={e=>{handleChangePreco(e.target.value)}}  className="select">
                                     { ordemPreco.map( ordem =>(
                                         <option key={ordem.value} value={ ordem.value }>{ ordem.opcao }</option>
                                     )) }
@@ -185,7 +253,7 @@ export default class Acessorios extends Component{
                             </div>
                             <div className="div-select">
                                 <label htmlFor="marca">Marca:</label>
-                                <select id="marca" value={marca} onChange={this.handleChangeMarca} className="select">
+                                <select id="marca" value={marca} onChange={e=>{handleChangeMarca(e.target.value)}} className="select">
                                     { ordemMarca.map( ordem =>(
                                         <option key={ordem.value} value={ ordem.value }>{ ordem.opcao }</option>
                                     )) }
@@ -214,10 +282,13 @@ export default class Acessorios extends Component{
                             </Grid>
                         ))}
                        </div>
+                       <button className="info" onClick={()=>{setPlusPag()}}>
+                         Ver Mais
+                        </button>
                     </Grid>
                     </div>
                 </Container>
             </main>
         );
-    }
+    
 }

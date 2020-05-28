@@ -77,6 +77,9 @@ export default class Produto extends Component{
                                     <td>Peso</td><td>{ product.weight }</td>
                                 </tr>
                                 <tr>
+                                    <td>Marca</td><td>{ product.brand }</td>
+                                </tr>
+                                <tr>
                                     <td>Camera</td><td>{ product.camera }</td>
                                 </tr>
                                 <tr>

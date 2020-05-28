@@ -56,9 +56,9 @@ div.div-list ul.list-options li:hover{
     padding:5px;
     display: inline-block;
     cursor: pointer;
-    opacity: 0.5;
     border-radius: 5px;
     margin:2px;
+    margin-left: auto;
     border-bottom:2px solid #fff;
 }
 

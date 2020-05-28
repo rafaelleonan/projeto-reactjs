@@ -1,7 +1,7 @@
 div.slide{
     position: relative;
     width: 100%;
-    border:10px solid black;
+
     
     height: 270px;
     margin-bottom:10px;
@@ -9,21 +9,28 @@ div.slide{
     background-color: burlywood;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 }
 div.slide img{
     width: 100%;
     height: 270px;
 }
 div.conteudo-slide{
+    top:0px;
+    box-shadow: 1px 2px 3px black;
     position: absolute;
     color:white;
-    background:transparent;
     padding:10px;
+    font-weight: bold;
+}
+.afas{
+    margin-top:10px;
 }
 
-/* @media (max-width: 420px) {
-    div.slide{
-width: 140%;
+
+@media (max-width: 420px) {
+    div.conteudo-slide{
+top:175px;
+
     }
-} */
+}

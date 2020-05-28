@@ -4,7 +4,7 @@ import '../../style.css';
 import Container from '@material-ui/core/Container';
 import Banner from '../../components/shared/Banner';
 import Slide from '../../components/shared/Slide';
-import slide from '../../static/imagens/slide2.jpg'
+import slide from '../../static/imagens/celularshow.jpg'
 import CardInfo from '../../components/shared/CardInfo';
 import banner from '../../static/imagens/banner.jpg'
 import ver_mais from '../../static/icons/ver_mais.png';
@@ -13,8 +13,7 @@ import lupa from '../../static/icons/lupa.png'
 import fecharPesquisa from '../../static/icons/fechar-pesquisa.png'
 import axios from 'axios'
 import Grid from '@material-ui/core/Grid';
-import Button from '../../components/shared/Botao';
-import Button1 from '../../components/shared/Botao';
+
 
 export default function  Home() {
 
@@ -23,6 +22,8 @@ export default function  Home() {
     const [pesquisado, setPesquisados] = useState([]);
     const [pags,setpages] = useState(1);
     const [pesquisa, setPesquisa] = useState('');
+    const [pagscel,setpagescel] = useState(1);
+    const [pagsacess,setpagesacess] = useState(1);
   
     useEffect(() => {
         loadProducts();
@@ -31,29 +32,43 @@ export default function  Home() {
     },[])
 
 
-  // useEffect(() => {
-  //       axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag='+pags).then(response => {
-  //           console.log(response)
-  //          setProduct([...products,...response.data]);
-  //       }, response =>{
-  //           console.log(response);
-  //       })
-  //   },[pags])
+  useEffect(() => {
+
+    loadProducts();
+     
+    },[pagscel])
+
+    useEffect(() => {
+
+        loadAcessorios();
+         
+  },[pagsacess])
    
     
 
 
     async function  loadProducts(){
-        await axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag='+pags).then(response => {
-            setProduct(response.data);
+        await axios.get(api+'/selectproduct?op=totalporcat&namecat=celulares&pag='+pagscel).then(response => {
+                    if(response.data.length===0){
+                       return;
+                    }else{
+                setProduct([...products,...response.data]);
+                    }
+           
         }, response =>{
+            console.log(response);
         })
     }
    
     async function  loadAcessorios(){
-      await axios.get(api+'/selectproduct?op=totalporcat&namecat=acessorios&pag='+pags).then(response => {
-            setAcessorios(response.data);
+      await axios.get(api+'/selectproduct?op=totalporcat&namecat=acessorios&pag='+pagsacess).then(response => {
+        if(response.data.length===0){
+            return;
+         }else{
+            setAcessorios([...acessorios,...response.data]);
+         }
         }, response =>{
+            console.log(response);
         })
     }
 
@@ -94,6 +109,13 @@ export default function  Home() {
     function setplus(){
        alert("a");
     }
+    function setpluscel(){
+        
+        setpagescel(pagscel+1);
+    }
+    function setplusaacess(){
+        setpagesacess(pagsacess+1);
+    }
    
         return(
             <main className="default content">
@@ -133,7 +155,7 @@ export default function  Home() {
                             </div>
                     </Grid>
                     </div>
-                    <Slide title="Slide aqui" text="Corpo do texto" slide={ slide } />
+                    <Slide title="Procurando algo?" text="Seja Bem-vindo e aproveite as nossas ofertas !" slide={ slide } />
                     <Banner title="Celulares" foto={ banner } link="/celulares"/>
                     <Grid container spacing={1}   className="grid">
                        <div className="pptotal">
@@ -152,7 +174,12 @@ export default function  Home() {
                             </Grid>
                         ))}
                        </div>
-                       < Button estilo="info" name="Ver Mais"/>
+                       <button className="info"  onClick={()=>{
+                           setpluscel();
+                       }}>
+                         Ver Mais
+                        </button>
+                      
                     </Grid>
 
                     <Banner title="Acessórios" foto={ banner } link="/acessorios"/>
@@ -172,7 +199,11 @@ export default function  Home() {
                             </Grid>
                         ))}
                         </div>
-                        < Button1 estilo="info" name="Ver Mais" onClick={()=>setplus()}/>
+                        <button className="info" onClick={()=>{
+                           setplusaacess();
+                       }}>
+                         Ver Mais
+                        </button>
                     </Grid>
                 </Container>
             </main>
