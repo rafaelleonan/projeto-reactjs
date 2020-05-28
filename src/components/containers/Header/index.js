@@ -12,7 +12,7 @@ export default class Header extends Component{
         let show = true;
          
         window.onresize = scroll;
-
+      
         function scroll(){
             document.body.style.overflowX = "hidden";
         if(window.innerWidth>748){
@@ -23,6 +23,15 @@ export default class Header extends Component{
         }
         
         }
+
+            function droptogle(){
+                const menuSection = document.querySelector("header");
+                menuSection.classList.toggle("on",false);
+            }
+           
+      
+
+
        
         return(
           
@@ -33,8 +42,8 @@ export default class Header extends Component{
                     </Link>
                     <div className="div-list">
                         <ul className="list-options">
-                            <li><Link to="/celulares">Celulares</Link></li>
-                            <li><Link to="/acessorios">Acessórios</Link></li>
+                            <li><Link to="/celulares"  onClick={()=>{droptogle()}} >Celulares</Link></li>
+                            <li><Link to="/acessorios" onClick={()=>{droptogle()}}>Acessórios</Link></li>
                         </ul>
                     </div>
                 
