@@ -27,6 +27,7 @@ export default class Header extends Component{
             function droptogle(){
                 const menuSection = document.querySelector("header");
                 menuSection.classList.toggle("on",false);
+                document.body.style.overflowY = "scroll";
             }
            
       

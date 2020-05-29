@@ -147,7 +147,7 @@ export default function  Home() {
                                 subtitle={ pesquisa.value }
                                 id={ pesquisa.id }
                                 text={ pesquisa.description }
-                                linkButton2={`/produto/${pesquisa.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
+                                linkButton2={`/produto/${(pesquisa.nameproduct.replace(/\s/g, "-")).replace("/","-")}/${pesquisa.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
                                
                                />
                             </Grid>
@@ -160,6 +160,7 @@ export default function  Home() {
                     <Grid container spacing={1}   className="grid">
                        <div className="pptotal">
                         {products.map(product =>(
+                      
                             <Grid item xs={3} key={ product.id } className="griditem">  
                                 <CardInfo 
                                 imagem={ product.url } 
@@ -168,7 +169,7 @@ export default function  Home() {
                                 subtitle={ product.value }
                                 id={ product.id }
                                 text={ product.description }
-                                linkButton2={`/produto/${product.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
+                                linkButton2={`/produto/${(product.nameproduct.replace(/\s/g, "-")).replace("/","-")}/${product.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
                                
                                />
                             </Grid>
@@ -194,7 +195,7 @@ export default function  Home() {
                                 subtitle={ acessorio.value }
                                 id={ acessorio.id }
                                 text={ acessorio.description }
-                                linkButton2={`/produto/${acessorio.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
+                                linkButton2={`/produto/${(acessorio.nameproduct.replace(/\s/g, "-")).replace("/","-")}/${acessorio.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
                                 />
                             </Grid>
                         ))}

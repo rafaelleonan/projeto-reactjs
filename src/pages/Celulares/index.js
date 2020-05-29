@@ -222,7 +222,7 @@ export default function Categoria() {
                                 subtitle={ pesquisa.value }
                                 id={ pesquisa.id }
                                 text={ pesquisa.description }
-                                linkButton2={`/produto/${pesquisa.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
+                                linkButton2={`/produto/${(pesquisa.nameproduct.replace(/\s/g, "-")).replace("/","-")}/${pesquisa.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
                                
                                />
                             </Grid>
@@ -277,7 +277,7 @@ export default function Categoria() {
                                 subtitle={ product.value }
                                 id={ product.id }
                                 text={ product.description }
-                                linkButton2={`/produto/${product.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
+                                linkButton2={`/produto/${(product.nameproduct.replace(/\s/g, "-")).replace("/","-")}/${product.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
                                 />
                             </Grid>
                         ))}
