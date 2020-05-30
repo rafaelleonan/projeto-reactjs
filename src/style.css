@@ -22,8 +22,9 @@ body{
 .pptotal{
     width:100%;
     display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
-    
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    position: relative;
+    left:100px;
     /* grid-gap:5px; */
      transition-duration: linear 3s; 
     
@@ -33,14 +34,17 @@ body{
     margin-top: 20px !important;
 }
 
- @media (max-width: 1300px) {
+@media (max-width: 1700px) {
 
     .pptotal{
         grid-template-columns:1fr 1fr 1fr;
+        left:40px;
         
     } 
 
 }
+   
+
     
 @media (max-width: 814px) {
 
@@ -48,6 +52,7 @@ body{
         grid-template-columns:1fr 1fr;
         grid-gap:5px;
         justify-content:center;
+        left:0px;
         
     }  
 
