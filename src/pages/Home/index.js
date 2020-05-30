@@ -6,7 +6,7 @@ import Banner from '../../components/shared/Banner';
 import Slide from '../../components/shared/Slide';
 import slide from '../../static/imagens/celularshow.jpg'
 import CardInfo from '../../components/shared/CardInfo';
-import banner from '../../static/imagens/banner.jpg'
+import banner from '../../static/imagens/bannepretor.jpg'
 import ver_mais from '../../static/icons/ver_mais.png';
 import api from '../../services/api';
 import lupa from '../../static/icons/lupa.png'
