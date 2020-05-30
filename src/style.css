@@ -55,7 +55,20 @@ body{
  @media (max-width:993px){
     div.filtro{
         flex-direction: column;
+       
+
     }
+   
+   
+}
+@media (max-width:600px){
+    div.div-select{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        }
+      
+
 }
 .buttonvermais{
    border: 1px solid black;

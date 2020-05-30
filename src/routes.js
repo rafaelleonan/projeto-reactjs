@@ -8,7 +8,7 @@ import Acessorios from './pages/Acessorios';
 const Routes = () => (
     <Switch>
         <Route exact path="/" component={ Home }/>
-        <Route exact path="/produto/:id" component={ Produto }/>
+        <Route exact path="/produto/:name/:id" component={ Produto }/>
         <Route exact path="/celulares" component={ Celulares }/>
         <Route exact path="/acessorios" component={ Acessorios }/>
     </Switch>

@@ -222,7 +222,8 @@ export default function Acessorios() {
                                 subtitle={ pesquisa.value }
                                 id={ pesquisa.id }
                                 text={ pesquisa.description }
-                                linkButton2={`/produto/${pesquisa.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
+
+                                linkButton2={`/produto/${(pesquisa.nameproduct.replace(/\s/g, "-")).replace("/","-")}/${pesquisa.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Ver mais"
                                
                                />
                             </Grid>
@@ -277,7 +278,7 @@ export default function Acessorios() {
                                 subtitle={ acessorio.value }
                                 id={ acessorio.id }
                                 text={ acessorio.description }
-                                linkButton2={`/produto/${acessorio.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
+                                linkButton2={`/produto/${(acessorio.nameproduct.replace(/\s/g, "-")).replace("/","-")}/${acessorio.id}`} nameButton2="Ver mais" icon2={ ver_mais } altIcon2="Carrinho"
                                 />
                             </Grid>
                         ))}
