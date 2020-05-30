@@ -3,7 +3,7 @@ import './style.css';
 import '../../style.css';
 import Container from '@material-ui/core/Container';
 import Banner from '../../components/shared/Banner';
-import acessoriosBanner from '../../static/imagens/acessorios.jpg';
+import acessoriosBanner from '../../static/imagens/acessoriosbanner.jpg';
 import CardInfo from '../../components/shared/CardInfo';
 import Botao from '../../components/shared/Botao';
 import ver_mais from '../../static/icons/ver_mais.png';
