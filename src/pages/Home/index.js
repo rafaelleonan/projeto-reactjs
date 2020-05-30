@@ -155,7 +155,14 @@ export default function  Home() {
                             </div>
                     </Grid>
                     </div>
-                    <Slide title="Procurando algo?" text="Seja Bem-vindo e aproveite as nossas ofertas !" slide={ slide } />
+                    <Slide 
+                    title1="Procurando algo?" text1="Seja Bem-vindo e aproveite as nossas ofertas !" foto1={ slide }
+                    title2="CellShop" text2="O Melhor site de celulares e acessórios" foto2={ slide }
+                    title3="Título 3" text3="Texto 3" foto3={ slide }
+                    title4="Título 4" text4="Texto 4" foto4={ slide }
+                    />
+                    
+                    
                     <Banner title="Celulares" foto={ banner } link="/celulares"/>
                     <Grid container spacing={1}   className="grid">
                        <div className="pptotal">

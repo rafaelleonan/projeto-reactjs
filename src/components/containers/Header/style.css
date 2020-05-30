@@ -5,7 +5,7 @@ header.header{
     position: fixed;
     top:0px;
     height: 80px;
-    z-index: 1;
+    z-index: 99;
     background:	#1f1f1f;
     width:100vw;
     font-weight: bold;
@@ -34,17 +34,14 @@ div.div-list{
 }
 div.div-list ul.list-options{
     list-style: none;
-    border-radius: 5px;
 }
 div.div-list ul.list-options li{
     position: relative;
     padding:5px;
     display: inline-block;
     cursor: pointer;
-    border-radius: 5px;
     margin:2px;
     margin-left: auto;
-    border-bottom:2px solid #1f1f1f;
 }
 div.div-list ul.list-options li a{
     color:#edebaf;
@@ -55,10 +52,8 @@ div.div-list ul.list-options li:hover{
     padding:5px;
     display: inline-block;
     cursor: pointer;
-    border-radius: 5px;
     margin:2px;
     margin-left: auto;
-    border-bottom:2px solid #edebaf;
 }
 
 

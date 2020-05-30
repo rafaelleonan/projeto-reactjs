@@ -9,6 +9,10 @@ export default class Produto extends Component{
     state = {
         product:{}
     }
+    formatPrice(value) {
+        let val = (value / 1).toFixed(2).replace(".", ",");
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
     componentDidMount(){
         let id = this.props.match.params.id;
         let name = this.props.match.params.name;
@@ -49,13 +53,13 @@ export default class Produto extends Component{
                             </div>
                             <div className="inline-desc">
                                 <div className="titulo">
-                                    <h3> { product.nameproduct } </h3>
+                                    <strong> { product.nameproduct } </strong>
                                 </div>
                                 <div className="des">
                                     <p> { product.description }</p>
                                 </div>
                                 <div className="preco">
-                                    <p>R$ { product.value }</p>
+                                    <p>R$ { this.formatPrice(product.value) }</p>
                                 </div>
                                 {/* <div className="compra">
                                     <button type="button">Adicionar ao carrinho</button>

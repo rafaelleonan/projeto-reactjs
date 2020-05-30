@@ -16,6 +16,7 @@ div.titulo a {
 h1{
     margin-left: 10px;
     margin-right: 10px;
+    font-size: 30px !important;
 }
 hr, h1{
     position: relative;

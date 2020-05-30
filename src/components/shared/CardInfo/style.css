@@ -23,11 +23,11 @@
     overflow: hidden;
 }
 .subtitulo{
-    font-size: 12px;
+    font-size: 15px !important;
     color:green;
 }
 .subtitulo:before{
-    font-size: 12px;
+    font-size: 15px;
     content:'R$ '
 }
 .description{

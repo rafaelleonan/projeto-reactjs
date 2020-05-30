@@ -11,6 +11,10 @@ import { Link } from 'react-router-dom';
 
 
 export default class CardInfo extends Component{
+    formatPrice(value) {
+        let val = (value / 1).toFixed(2).replace(".", ",");
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
     render(){
         return(
             <div>
@@ -27,7 +31,7 @@ export default class CardInfo extends Component{
                         { this.props.title }
                         </Typography>
                         <Typography gutterBottom className="subtitulo">
-                        { this.props.subtitle }
+                        { this.formatPrice(this.props.subtitle) }
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p" id={ this.props.id } className="description">
                         { this.props.text }
