@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Produto from './pages/Produto';
 import Celulares from './pages/Celulares';
 import Acessorios from './pages/Acessorios';
+import NotFound from './pages/NotFound';
 
 const Routes = () => (
     <Switch>
@@ -11,6 +12,7 @@ const Routes = () => (
         <Route exact path="/produto/:name/:id" component={ Produto }/>
         <Route exact path="/celulares" component={ Celulares }/>
         <Route exact path="/acessorios" component={ Acessorios }/>
+        <Route component={NotFound}/>
     </Switch>
 );
 

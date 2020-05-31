@@ -5,6 +5,9 @@ import Container from '@material-ui/core/Container';
 import Banner from '../../components/shared/Banner';
 import Slide from '../../components/shared/Slide';
 import slide from '../../static/imagens/celularshow.jpg'
+import slide2 from '../../static/imagens/banner-slide2.jpg'
+import slide3 from '../../static/imagens/banner-slide3.jpg'
+import slide4 from '../../static/imagens/banner-slide4.jpg'
 import CardInfo from '../../components/shared/CardInfo';
 import banner from '../../static/imagens/bannepretor.jpg'
 import ver_mais from '../../static/icons/ver_mais.png';
@@ -157,9 +160,9 @@ export default function  Home() {
                     </div>
                     <Slide 
                     title1="Procurando algo?" text1="Seja Bem-vindo e aproveite as nossas ofertas !" foto1={ slide }
-                    title2="CellShop" text2="O Melhor site de celulares e acessórios" foto2={ slide }
-                    title3="Título 3" text3="Texto 3" foto3={ slide }
-                    title4="Título 4" text4="Texto 4" foto4={ slide }
+                    title2="Título 2" text2="Texto 2" foto2={ slide2 }
+                    title3="Título 3" text3="Texto 3" foto3={ slide3 }
+                    title4="Título 4" text4="Texto 4" foto4={ slide4 }
                     />
                     
                     
