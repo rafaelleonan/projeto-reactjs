@@ -42,10 +42,10 @@ export default class Header extends Component{
                         <img src={ logo } className="logo" alt="Logo"/>
                     </Link>
                     <div className="div-list">
-                        <ul className="list-options">
-                            <li><Link to="/celulares"  onClick={()=>{droptogle()}} >Celulares</Link></li>
-                            <li><Link to="/acessorios" onClick={()=>{droptogle()}}>Acessórios</Link></li>
-                        </ul>
+                        <nav className="list-options">
+                            <span><Link to="/celulares"  onClick={()=>{droptogle()}} >Celulares</Link></span>
+                            <span><Link to="/acessorios" onClick={()=>{droptogle()}}>Acessórios</Link></span>
+                        </nav>
                     </div>
                 
                     <div className="menu-toggle" onClick={()=>{
