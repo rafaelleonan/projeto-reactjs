@@ -1,3 +1,3 @@
-const api = process.env.REACT_APP_API_URL
+const api = 'http://sales-com-br.umbler.net'
 
 export default api;
