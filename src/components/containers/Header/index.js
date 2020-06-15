@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import './style.css';
 import logo from '../../../static/imagens/logo.jpeg';
+import imagem from '../../../static/imagens/c1.png';
 // import script from '../Header/scripts/css';
 import { Link } from 'react-router-dom'; 
 
@@ -41,6 +42,7 @@ export default class Header extends Component{
                     <Link to="/" className="a-logo">
                         <img src={ logo } className="logo" alt="Logo"/>
                     </Link>
+                   
                     <div className="div-list">
                         <ul className="list-options">
                             <li><Link to="/celulares"  onClick={()=>{droptogle()}} >Celulares</Link></li>

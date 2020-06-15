@@ -18,7 +18,14 @@ img.logo{
     width: 250px;
     height: 80px;
     margin-right: auto;
+
     /* display: none; */
+}
+.png{
+    border: 10px solid green ;
+    position: relative;
+    top:-300px;
+   
 }
 a.a-logo{
     position: relative;
@@ -41,6 +48,7 @@ div.div-list ul.list-options li{
     display: inline-block;
     cursor: pointer;
     margin:2px;
+    top:8px;
     margin-left: auto;
 }
 div.div-list ul.list-options li a{
@@ -101,6 +109,13 @@ header.on .div-search,header.on .a-logo{
 }
 header.on div.div-list ul.list-options{
 display: block;
+}
+
+.animacao{
+    position:relative;
+    width: 50vw;
+    height:2px;
+    background-color: #edebaf;
 }
 
 @media (max-width: 905px) {
