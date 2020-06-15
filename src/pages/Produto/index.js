@@ -7,7 +7,8 @@ import axios from 'axios'
 
 export default class Produto extends Component{
     state = {
-        product:{}
+        product:{},
+        error:''
     }
     formatPrice(value) {
         let val = (Number(value) / 1).toFixed(2).replace(".", ",");
@@ -71,63 +72,82 @@ export default class Produto extends Component{
                             <legend>Ficha técnica</legend>
                             <table className="table">
                                 <tbody>
-                                    <tr>
-                                        <td>Modelo</td><td>{ product.model }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Resolução</td><td>{ product.resolution }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dimensões</td><td>{ product.dimension }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cor</td><td>{ product.color }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Conectividade</td><td>{ product.connectivity }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Processador</td><td>{ product.processor }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Memória</td><td>{ product.memory }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Chip</td><td>{ product.chip }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Peso</td><td>{ product.weight }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Marca</td><td>{ product.brand }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Camera</td><td>{ product.camera }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Frequência</td><td>{ product.frequency }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bateria</td><td>{ product.drums }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Polegadas</td><td>{ product.inches }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Conexões</td><td>{ product.connections }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sistema operacional</td><td>{ product.operationalsystem }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>bluetooth</td><td>{ product.bluetooth }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tensão de alimentação</td><td>{ product.powervoltage }</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Wi-fi</td><td>{ product.wifi }</td>
-                                    </tr>
+                                    {product.model
+                                        ? <tr><td>Modelo</td><td>{ product.model }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.resolution
+                                        ? <tr><td>Resolução</td><td>{ product.resolution }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.dimension
+                                        ? <tr><td>Dimensões</td><td>{ product.dimension }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.color
+                                        ? <tr><td>Cor</td><td>{ product.color }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.connectivity
+                                        ? <tr><td>Conectividade</td><td>{ product.connectivity }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.processor 
+                                        ? <tr><td>Processador</td><td>{ product.processor }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.memory 
+                                        ? <tr><td>Memória</td><td>{ product.memory }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.chip 
+                                        ? <tr><td>Chip</td><td>{ product.chip }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.weight 
+                                        ? <tr><td>Peso</td><td>{ product.weight }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.brand
+                                        ? <tr><td>Marca</td><td>{ product.brand }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.camera
+                                        ? <tr><td>Camera</td><td>{ product.camera }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.frequency
+                                        ? <tr><td>Frequência</td><td>{ product.frequency }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.drums
+                                        ? <tr><td>Bateria</td><td>{ product.drums }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.inches
+                                        ? <tr><td>Polegadas</td><td>{ product.inches }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.connections
+                                        ? <tr><td>Conexões</td><td>{ product.connections }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.operationalsystem
+                                        ? <tr><td>Sistema operacional</td><td>{ product.operationalsystem }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.bluetooth
+                                        ? <tr><td>bluetooth</td><td>{ product.bluetooth }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.powervoltage
+                                        ? <tr><td>Tensão de alimentação</td><td>{ product.powervoltage }</td></tr>
+                                        : <tr></tr>
+                                    }
+                                    {product.wifi 
+                                        ? <tr><td>Wi-fi</td><td>{ product.wifi }</td></tr>
+                                        : <tr></tr>
+                                    }
                                 </tbody>
                             </table>
                         </fieldset>

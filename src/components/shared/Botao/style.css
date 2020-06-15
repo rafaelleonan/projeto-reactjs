@@ -7,11 +7,11 @@ button.padrao{
     background: #fff;
 }
 button.padrao:hover{
-    border:1px solid #edebaf;
+    border:1px solid #ececec;
     padding:10px;
     border-radius: 10px;
     cursor: pointer;
-    color: #edebaf;
+    color: #ececec;
     background: #1f1f1f;
 }
 button.info{
@@ -19,11 +19,11 @@ button.info{
     margin-left: auto;
     margin-right:auto;
     margin-top: 30px;
-    border:1px solid #edebaf;
+    border:1px solid #ececec;
     padding:10px;
     border-radius: 10px;
     cursor: pointer;
-    color: #edebaf;
+    color: #ececec;
     background: #1f1f1f;
     width:300px;
 }
@@ -33,7 +33,7 @@ button.info:hover{
     border-radius: 10px;
     cursor: pointer;
     color: #1f1f1f;
-    background: #edebaf;
+    background: #ececec;
 }
 button.dark{
     border:1px solid #000000;

@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 import Banner from '../../components/shared/Banner';
 import Slide from '../../components/shared/Slide';
 import slide from '../../static/imagens/celularshow.jpg'
-import slide2 from '../../static/imagens/banner-slide2.jpg'
+import slide2 from '../../static/imagens/banner-slide5.jpg'
 import slide3 from '../../static/imagens/banner-slide3.jpg'
 import slide4 from '../../static/imagens/banner-slide4.jpg'
 import CardInfo from '../../components/shared/CardInfo';
